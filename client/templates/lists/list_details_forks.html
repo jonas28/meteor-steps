@@ -1,0 +1,23 @@
+<template name="listDetailsForks">
+    {{> listDetailsHeader}}
+    <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="{{pathFor 'listPage'}}">Details</a></li>
+            <li role="presentation"><a href="{{pathFor 'listPage'}}/maintainers">Maintainer</a></li>
+            <li role="presentation"><a href="{{pathFor 'listPage'}}/activities">Activities</a></li>
+            <li role="presentation" class="active"><a href="{{pathFor 'listPage'}}/forks">Forks</a></li>
+        </ul>
+    </ul>
+    <div class="post">
+        <h3>Forks</h3>
+        {{#if forks}}
+            <div class="list-group">
+                {{#each forks}}
+                    {{> listItemForks}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+</template>
+
+
