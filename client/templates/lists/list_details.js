@@ -1,18 +1,9 @@
 Template.listDetails.helpers({
-    todos: function() {
-        return Todos.find({listId : this._id});
-    },
-    todosCount: function() {
-        return Todos.find({listId :  this._id}).count();
-    },
     originals: function() {
         return Lists.find({_id : this.original});
     },
     forks: function() {
         return Lists.find({original : this._id});
-    },
-    forksCount: function() {
-        return Lists.find({original :  this._id}).count();
     },
     maintainer: function() {
         var userId = Meteor.userId();

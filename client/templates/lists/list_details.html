@@ -1,32 +1,18 @@
 <template name="listDetails">
     {{> listDetailsHeader}}
+    <ul class="nav nav-pills">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Details</a></li>
+            <li role="presentation"><a href="#">Forks</a></li>
+            <li role="presentation"><a href="#">Shares</a></li>
+        </ul>
+    </ul>
     <div class="post">
-        <div class="post-content">
-            <p>{{todosCount}} Todos</p>
-            <p>{{forksCount}} Forks</p>
-            <p>{{shares}} Shares</p>
-            <p>
-            {{#if forks}}
-                <h3>Forks</h3>
-                <ul>
-                    {{#each forks}}
-                        {{> listItem}}
-                    {{/each}}
-                </ul>
-            {{/if}}
-            <h3>Original</h3>
-            <ul>
-                {{#each originals}}
-                    {{> listItem}}
-                {{/each}}
-            </ul>
-            </p>
-            <ul>
-                {{#each todos}}
-                    {{> todoItem}}
-                {{/each}}
-            </ul>
-        </div>
+        {{> listDetailsMetainfos}}
+        {{> listDetailsTodos}}
+        {{> listDetailsSteps}}
+        {{> listDetailsEmbed}}
+
     </div>
 </template>
 

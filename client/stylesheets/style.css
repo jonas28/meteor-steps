@@ -186,9 +186,21 @@ body {
     pointer-events: auto;
 }
 
+.metainfos {
+    margin-top: 45px;
+    padding-top: 35px;
+    padding-bottom: 36px;
+    border-top: 1px solid #E5E5E5;
+}
+
 .footer {
     margin-top: 45px;
     padding-top: 35px;
     padding-bottom: 36px;
     border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.wunderlistexample img {
+    width: 400px;
 }
