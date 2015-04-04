@@ -13,6 +13,7 @@ body {
 
 #main {
     position: relative;
+    margin-top: 65px;
 }
 .page {
     position: absolute;
@@ -20,11 +21,17 @@ body {
     width: 100%;
 }
 
+
 .navbar {
     margin-bottom: 10px; }
 /* line 32, ../sass/style.scss */
 .navbar .navbar-inner {
     border-radius: 0px 0px 3px 3px; }
+
+.navbar-brand img {
+    height: 30px;
+}
+
 
 #spinner {
     height: 300px; }
@@ -118,10 +125,30 @@ body {
 
 .jumbotron{
     text-align: center;
+    background: url(http://riotdesign.eu/assets/img/home-slider/bg-archea.jpg) no-repeat center;
+    background-size: cover;
 }
-.jumbotron h2{
-    font-size: 60px;
-    font-weight: 100;
+.jumbotron h1{
+    font-family: Lato, Helvetica Neue, Helvetica, sans-serif !important;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 200;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    max-width: 640px;
+    color: #ffffff;
+
+}
+
+.jumbotron p{
+    font-family: Lato, Helvetica Neue, Helvetica, sans-serif !important;
+    font-size: 20px;
+    max-width: 640px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
 }
 
 @-webkit-keyframes fadeOut {
@@ -157,4 +184,11 @@ body {
     clear: both;
     margin-bottom: 5px;
     pointer-events: auto;
+}
+
+.footer {
+    margin-top: 45px;
+    padding-top: 35px;
+    padding-bottom: 36px;
+    border-top: 1px solid #E5E5E5;
 }

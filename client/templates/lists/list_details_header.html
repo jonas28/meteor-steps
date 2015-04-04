@@ -1,0 +1,12 @@
+<template name="listDetailsHeader">
+    <div class="jumbotron">
+        <h1>{{title}}</h1>
+        <p>
+            {{description}}
+            <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
+            {{#if currentUser}}
+                <a class="btn btn-default fork" href="#">Fork</a>
+            {{/if}}
+        </p>
+    </div>
+</template>
