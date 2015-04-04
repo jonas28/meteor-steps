@@ -1,0 +1,1 @@
+Deployed to digitalfitness.meteor.com

@@ -1,0 +1,48 @@
+<template name="listDetails">
+    <div class="post">
+        <div class="post-content">
+            <h3>{{title}}</h3>
+            <p>{{todosCount}} Todos</p>
+            <p>{{forksCount}} Forks</p>
+            <p>{{shares}} Shares</p>
+            Besucher = Maintainer: {{maintainer}}
+            {{#if maintainer }}
+                <p>
+                    <a class="btn btn-primary submit" href="{{pathFor 'listEdit'}}">Update</a>
+
+                </p>
+            {{/if}}
+            {{#if currentUser}}
+                <p>
+                <a class="btn btn-primary fork" href="#">Fork</a>
+                </p>
+            {{/if}}
+            <p>
+            {{#if forks}}
+                <h3>Forks</h3>
+                <ul>
+                    {{#each forks}}
+                        {{> listItem}}
+                    {{/each}}
+                </ul>
+            {{/if}}
+            <h3>Original</h3>
+            <ul>
+                {{#each originals}}
+                    {{> listItem}}
+                {{/each}}
+            </ul>
+            </p>
+            <p>
+               {{description}}
+            </p>
+            <ul>
+                {{#each todos}}
+                    {{> todoItem}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
+
+

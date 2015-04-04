@@ -1,0 +1,10 @@
+<template name="listItem">
+    <div class="post">
+        <div class="post-content">
+            <h3><a href="{{pathFor 'listPage'}}">{{title}}</a></h3>
+            <p>{{todosCount}} Todos</p>
+            <p>{{forksCount}} Forks</p>
+        </div>
+        <a href="{{pathFor 'listPage'}}" class="discuss btn btn-default">Details</a>
+    </div>
+</template>

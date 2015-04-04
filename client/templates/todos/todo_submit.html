@@ -1,0 +1,23 @@
+<template name="todoSubmit">
+    <form class="main form page">
+        <div class="form-group">
+            <label class="control-label" for="title">Title</label>
+            <div class="controls">
+                <input name="title" id="title" type="text" value="" placeholder="Title" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="comment">Comment</label>
+            <div class="controls">
+                <input name="comment" id="comment" type="textarea" value="" placeholder="Comment" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="listId">Liste</label>
+            <div class="controls">
+                <input name="listId" id="listId" type="text" value="{{listId}}" placeholder="listId" class="form-control"/>
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+</template>
