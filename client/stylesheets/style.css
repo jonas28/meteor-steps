@@ -204,3 +204,9 @@ body {
 .wunderlistexample img {
     width: 360px;
 }
+
+.appicons img {
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}

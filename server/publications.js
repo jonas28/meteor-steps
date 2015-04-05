@@ -6,6 +6,10 @@ Meteor.publish('todos', function() {
     return Todos.find();
 });
 
+Meteor.publish('apps', function() {
+    return Apps.find();
+});
+
 Meteor.publish('singleList', function(id) {
     check(id, String);
     return Lists.find(id);
