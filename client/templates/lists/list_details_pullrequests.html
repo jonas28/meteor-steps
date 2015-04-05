@@ -1,4 +1,4 @@
-<template name="listDetailsForks">
+<template name="listDetailsPullrequests">
     {{> listDetailsHeader}}
     <ul class="nav nav-pills">
         <ul class="nav nav-tabs">
@@ -6,19 +6,15 @@
             <li role="presentation"><a href="{{pathFor 'listPage'}}/maintainers">Maintainers</a></li>
             <li role="presentation"><a href="{{pathFor 'listPage'}}/contributors">Contributors</a></li>
             <li role="presentation"><a href="{{pathFor 'listPage'}}/activities">Activities</a></li>
-            <li role="presentation"><a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a></li>
-            <li role="presentation" class="active"><a href="{{pathFor 'listPage'}}/forks">Forks</a></li>
+            <li role="presentation" class="active"><a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a></li>
+            <li role="presentation"><a href="{{pathFor 'listPage'}}/forks">Forks</a></li>
         </ul>
     </ul>
     <div class="post">
-        <h3>Forks</h3>
-        {{#if forks}}
-            <div class="list-group">
-                {{#each forks}}
-                    {{> listItemForks}}
-                {{/each}}
-            </div>
-        {{/if}}
+        <h3>Pull Requests</h3>
+        <p>
+            Pull requests help you collaborate on code with other people. As pull requests are created, they'll appear here in a list. To get started, you should create a pull request.
+        </p>
     </div>
 </template>
 
