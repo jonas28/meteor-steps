@@ -3,9 +3,13 @@
     <div class="bootcards-list">
         <div class="panel panel-default">
             <div class="list-group">
-                {{#each todos}}
-                    {{> todoItem}}
-                {{/each}}
+                    {{#each todos}}
+                        {{> todoItem}}
+                    {{else}}
+                    <p class="list-group-item">
+                        There are no todos in this list.
+                    </p>
+                    {{/each}}
             </div>
         </div>
     </div>

@@ -12,10 +12,15 @@
     </ul>
     <div class="post">
         <h3>Forks</h3>
+        <p>A fork happens when user take a copy of a list and start independent development on it, creating a distinct and separate list. </p>
         {{#if forks}}
             <div class="list-group">
                 {{#each forks}}
                     {{> listItemForks}}
+                {{else}}
+                    <p class="list-group-item">
+                        There are no Forks from this list.
+                    </p>
                 {{/each}}
             </div>
         {{/if}}
