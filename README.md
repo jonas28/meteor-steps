@@ -1,1 +1,1 @@
-Deployed to digitalfitness.meteor.com
+Deployed to steps.meteor.com
