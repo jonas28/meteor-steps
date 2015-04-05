@@ -11,6 +11,16 @@
         </ul>
     </ul>
     <div class="post">
+        <h3>Maintainers</h3>
+        <div class="bootcards-list">
+            <div class="panel panel-default">
+                <div class="list-group">
+                    {{#each maintainers}}
+                        {{> listDetailsMaintainerItem}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
         {{> listDetailsTodos}}
     </div>
     <div class="post">

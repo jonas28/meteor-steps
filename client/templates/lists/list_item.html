@@ -1,10 +1,31 @@
 <template name="listItem">
-    <div class="post">
-        <div class="post-content">
-            <h3><a href="{{pathFor 'listPage'}}">{{title}}</a></h3>
-            <p>{{todosCount}} Todos</p>
-            <p>{{forksCount}} Forks</p>
+    <div class="col-sm-4 bootcards-list">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <a href="{{pathFor 'listPage'}}">
+                <h3 class="panel-title pull-left">{{title}}</h3>
+                </a>
+                <a class="btn btn-default pull-right" href="{{pathFor 'listPage'}}">
+                    <i class="fa fa-check"></i>
+                    Details
+                </a>
+            </div>
+            <img src="/resources/list_cover.png" class="img-responsive">
+            <div class="panel-body">
+                <p>{{description}}</p>
+            </div>
+            <div class="list-group">
+                <div class="list-group-item">
+                    <div class="bootcards-list">
+                            {{#each maintainers}}
+                                {{> listsListmaintainerItem}}
+                            {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <small>{{todosCount}} Todos</small>
+            </div>
         </div>
-        <a href="{{pathFor 'listPage'}}" class="discuss btn btn-default">Details</a>
     </div>
 </template>
