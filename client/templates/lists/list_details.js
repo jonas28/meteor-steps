@@ -4,15 +4,8 @@ Template.listDetails.helpers({
     },
     forks: function() {
         return Lists.find({original : this._id});
-    },
-    maintainer: function() {
-        var userId = Meteor.userId();
-        // TODO: Anstatt nur im ersten Array zu suchen, muss das mehrdimensionale Array maintainers durchsucht werden.
-        return this.maintainers[0].userId === userId;
-        // Jan fragen
     }
 });
-
 
 
 Template.listDetails.events({

@@ -1,5 +1,7 @@
 Template.todoDetails.helpers({
     maintainer: function() {
-        return this.maintainers[0].userId === Meteor.userId();
+        var userId = Meteor.userId();
+        var list = Lists.findOne(this.listId);
+        return _.contains(_.pluck(list.maintainers, 'userId'), userId);
     }
 });

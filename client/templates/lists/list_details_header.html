@@ -3,7 +3,10 @@
         <h1>{{title}}</h1>
         <p>
             {{description}}
-            <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
+            {{# if maintainer}}
+                <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
+                <a class="btn btn-default submit" href="{{pathFor 'todoSubmit'}}">Submit Todo</a>
+            {{/if}}
             {{#if currentUser}}
                 <a class="btn btn-default fork" href="#">Fork</a>
             {{/if}}

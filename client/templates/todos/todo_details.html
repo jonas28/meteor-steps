@@ -6,11 +6,11 @@
                 {{comment}}
             </p>
             {{#if maintainer }}
-            <p>
                 <a class="btn btn-primary submit" href="{{pathFor 'todoEdit'}}">Update</a>
-            </p>
             {{/if}}
-
+            {{#if currentUser}}
+                <a class="btn btn-primary submit" href="{{pathFor 'todoPullrequest'}}">Pull Reguest</a>
+            {{/if}}
         </div>
     </div>
 </template>

@@ -10,6 +10,11 @@ Meteor.publish('apps', function() {
     return Apps.find();
 });
 
+Meteor.publish('singleApp', function(id) {
+    check(id, String);
+    return Apps.find(id);
+});
+
 Meteor.publish('singleList', function(id) {
     check(id, String);
     return Lists.find(id);

@@ -1,4 +1,4 @@
-<template name="listEdit">
+<template name="todoPullrequest">
     <form class="main form page">
         <div class="form-group">
             <label class="control-label" for="title">Title</label>
@@ -7,11 +7,11 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="description">Description</label>
+            <label class="control-label" for="comment">Comment</label>
             <div class="controls">
-                <input name="description" id="description" type="text" value="{{description}}" placeholder="Description" class="form-control"/>
+                <input name="comment" id="comment" type="text" value="{{comment}}" placeholder="Comment" class="form-control"/>
             </div>
         </div>
-        <input type="submit" value="Submit" class="btn btn-primary"/>
+        <input type="submit" value="Submit" class="btn btn-primary submit"/>
     </form>
 </template>

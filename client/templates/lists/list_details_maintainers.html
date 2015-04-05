@@ -11,6 +11,23 @@
         </ul>
     </ul>
     <div class="post">
+    {{# if maintainer}}
+        <form>
+            <div class="form-group">
+                <label class="control-label" for="title">userId</label>
+                <div class="controls">
+                    <input name="userid" id="userid" type="text" value="" placeholder="userId" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="description">userName</label>
+                <div class="controls">
+                    <input name="username" id="username" type="text" value="" placeholder="userName" class="form-control"/>
+                </div>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </form>
+    {{/if}}
         <h3>Maintainers</h3>
         {{#if maintainers}}
             <div class="list-group">
@@ -19,6 +36,7 @@
             {{/each}}
         </div>
         {{/if}}
+
     </div>
 </template>
 

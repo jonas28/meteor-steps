@@ -1,16 +1,17 @@
-Template.todoSubmit.events({
+Template.todoPullrequest.events({
     'submit form': function(e) {
         e.preventDefault();
 
-        var todo = {
+        var pullrequest = {
             title: $(e.target).find('[name=title]').val(),
             comment: $(e.target).find('[name=comment]').val(),
-            listId: this._id,
-            status: 'published'
+            listId: this.listId,
+            todoId: this._id,
+            status: 'pullrequest'
         };
 
 
-        Meteor.call('todoInsert', todo, function(error, result) {
+        Meteor.call('todoInsert', pullrequest, function(error, result) {
             // display the error to the user and abort
             if (error)
                 return throwError(error.reason);
