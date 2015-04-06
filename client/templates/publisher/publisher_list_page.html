@@ -1,0 +1,20 @@
+<template name="publisherListPage">
+    <div class="row">
+        <div class="col-md-4">
+            {{#each lists}}
+                {{> publisherListItem}}
+            {{/each}}
+            {{> publisherListSubmit}}
+        </div>
+        <div class="col-md-8">
+                {{#each todos}}
+                    {{> publisherTodoItem}}
+                {{else}}
+                    <p>
+                        There are no todos in this list.
+                    </p>
+                {{/each}}
+                {{> publisherTodoSubmit}}
+        </div>
+    </div>
+</template>
