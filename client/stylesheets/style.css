@@ -212,7 +212,7 @@ body {
 
 
 .list-item input[type="text"] {
-    width: 70%;
+    width: 60%;
     float: left;
     border: 0px;
     outline: none;
@@ -228,10 +228,16 @@ body {
 
 . publisher-todo-buttons {
     display: block;
-    width: 30%;
+    width: 40%;
     float: right;
 }
 
+
+. publisher-list-buttons {
+    display: block;
+    width: 40%;
+    float: right;
+}
 
 
 

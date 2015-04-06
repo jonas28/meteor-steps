@@ -1,19 +1,20 @@
-<template name="publisher">
+<template name="publisherListInsightsPage">
     <div class="row">
         <div class="col-md-4">
             <h4>Deine Listen</h4>
             {{> publisherListSubmit}}
             {{#each lists}}
-                    {{> publisherListItem}}
+                {{> publisherListItem}}
             {{else}}
                 <p>
                     You have no lists.
                 </p>
             {{/each}}
         </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
+            <h4>Insights für {{title}}</h4>
+            {{> publisherListInsightsTable}}
+            {{> publisherListInsightsCharts}}
         </div>
     </div>
 </template>

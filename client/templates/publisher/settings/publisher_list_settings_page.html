@@ -1,19 +1,24 @@
-<template name="publisher">
+<template name="publisherListSettingsPage">
     <div class="row">
         <div class="col-md-4">
             <h4>Deine Listen</h4>
             {{> publisherListSubmit}}
             {{#each lists}}
-                    {{> publisherListItem}}
+                {{> publisherListItem}}
             {{else}}
                 <p>
                     You have no lists.
                 </p>
             {{/each}}
         </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
+            <h4>Settings für {{title}}</h4>
+            <div class="post">
+            <p>Hier kommen die Settings hin.</p>
+            </div>
         </div>
     </div>
 </template>
+
+
+
