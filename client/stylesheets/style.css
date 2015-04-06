@@ -212,10 +212,25 @@ body {
 
 
 .list-item input[type="text"] {
+    width: 70%;
+    float: left;
     border: 0px;
     outline: none;
 }
 
+.list-item textarea {
+    min-height: 200px;
+    display: block;
+    width: 100%;
+    border: 0px;
+    outline: none;
+}
+
+. publisher-todo-buttons {
+    display: block;
+    width: 30%;
+    float: right;
+}
 
 
 

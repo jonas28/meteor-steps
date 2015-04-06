@@ -2,6 +2,10 @@
     <div class="row">
         {{#each lists}}
             {{> listItem}}
+        {{else}}
+            <p>
+                Sorry. There are no lists.
+            </p>
         {{/each}}
     </div>
 </template>

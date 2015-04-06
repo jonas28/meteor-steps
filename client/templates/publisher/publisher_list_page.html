@@ -1,14 +1,16 @@
 <template name="publisherListPage">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h4>Deine Listen</h4>
+            {{> publisherListSubmit}}
             {{#each lists}}
                 {{> publisherListItem}}
             {{/each}}
-            {{> publisherListSubmit}}
+
         </div>
-        <div class="col-md-8">
+        <div class="col-md-3">
             <h4>{{title}}</h4>
+                {{> publisherTodoSubmit}}
                 {{#each todos}}
                     {{> publisherTodoItem}}
                 {{else}}
@@ -16,7 +18,9 @@
                         There are no todos.
                     </p>
                 {{/each}}
-                {{> publisherTodoSubmit}}
-            </div>
+
+        </div>
+        <div class="col-md-6">
+        </div>
     </div>
 </template>

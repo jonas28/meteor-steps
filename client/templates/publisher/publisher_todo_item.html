@@ -2,6 +2,13 @@
     <div class="post">
         <div class="list-item {{editingClass}}">
             <input type="text" value="{{title}}" placeholder="Title"/>
+            <div class ="publisher-todo-buttons">
+                <a class="btn btn-default btn-xs" href="/publisher/lists/{{listId}}/todos/{{_id}}"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                <a class="btn btn-default btn-xs delete" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
+            </div>
         </div>
     </div>
 </template>
+
+
+
