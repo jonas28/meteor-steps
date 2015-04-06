@@ -4,11 +4,14 @@
             <input type="text" value="{{title}}" placeholder="Title"/>
             <div class ="publisher-list-buttons">
                 <a class="btn btn-default btn-xs" href="/publisher/lists/{{listId}}/todos/{{_id}}"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                <a class="btn btn-default btn-xs delete" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
+                {{#if isPublished}}
+                    <a class="btn btn-default btn-xs unpublish" href="#"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> </a>
+                {{else}}
+                    <a class="btn btn-default btn-xs publish" href="#"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </a>
+                {{/if}}
+                <a class="btn btn-default btn-xs delete" href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
             </div>
         </div>
     </div>
 </template>
-
-
 

@@ -1,5 +1,5 @@
 Template.listDetailsTodos.helpers({
     todos: function() {
-        return Todos.find({listId : this._id});
+        return Todos.find({listId : this._id, status : 'published'});
     }
 });

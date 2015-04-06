@@ -3,7 +3,11 @@ var EDITING_KEY = 'EDITING_TODO_ID';
 Template.publisherTodoItem.helpers({
     editingClass: function() {
         return Session.equals(EDITING_KEY, this._id) && 'editing';
-    }
+    },
+    isPublished: function() {
+        return this.status == 'published';
+    },
+
 });
 
 Template.publisherTodoItem.events({
@@ -37,5 +41,20 @@ Template.publisherTodoItem.events({
             var currentTodoId = this._id;
             Todos.remove(currentTodoId);
         }
+    },
+    'click .publish': function(e) {
+        e.preventDefault();
+
+        if (confirm("Publish this todo?")) {
+            Todos.update(this._id, {$set: {status: 'published'}});
+        }
+    },
+    'click .unpublish': function(e) {
+        e.preventDefault();
+
+        if (confirm("Unpublish this todo?")) {
+            Todos.update(this._id, {$set: {status: 'draft'}});
+        }
     }
+
 });
