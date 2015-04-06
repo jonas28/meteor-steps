@@ -210,132 +210,16 @@ body {
     margin-right: 10px;
 }
 
-#content-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    -webkit-transition: all 200ms ease-out;
-    -moz-transition: all 200ms ease-out;
-    -o-transition: all 200ms ease-out;
-    transition: all 200ms ease-out;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    background: #d2edf4;
-    opacity: 1;
-}
 
-#content-container.content-scrollable {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+.list-item input[type="text"] {
+    border: 0px;
+    outline: none;
 }
 
 
-.list-items .list-item {
-    font-size: 14px;
-    line-height: 20px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    height: 3rem;
-    width: 100%;
-}
 
-.list-items .list-item .checkbox {
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 0 44px;
-    -ms-flex: 0 0 44px;
-    flex: 0 0 44px;
-    cursor: pointer;
-}
 
-.list-items .list-item input[type="text"] {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-}
 
-.list-items .list-item .delete-item {
-    -webkit-box-flex: 0;
-    -moz-box-flex: 0;
-    -webkit-flex: 0 0 3rem;
-    -ms-flex: 0 0 3rem;
-    flex: 0 0 3rem;
-}
-
-.list-items .list-item input[type="text"] {
-    background: transparent;
-    cursor: pointer;
-}
-
-.list-items .list-item input[type="text"]:focus {
-    cursor: text;
-}
-
-.list-items .list-item .delete-item {
-    color: #cccccc;
-    line-height: 3rem;
-    text-align: center;
-}
-
-.list-items .list-item .delete-item:hover {
-    color: #2cc5d2;
-}
-
-.list-items .list-item .delete-item:active {
-    color: #555555;
-}
-
-.list-items .list-item .delete-item .icon-trash {
-    font-size: 1.1em;
-}
-
-.list-items .list-item + .list-item {
-    border-top: 1px solid #f0f9fb;
-}
-
-.list-items .list-item.checked input[type="text"] {
-    color: #cccccc;
-    text-decoration: line-through;
-}
-
-.list-items .list-item.checked .delete-item {
-    display: inline-block;
-}
-
-.list-items .list-item .delete-item {
-    display: none;
-}
-
-.list-items .list-item.editing .delete-item {
-    display: inline-block;
-}
 
 
 

@@ -1,13 +1,17 @@
 <template name="publisher">
     <div class="row">
         <div class="col-md-4">
+            <h4>Deine Listen</h4>
             {{#each lists}}
                     {{> publisherListItem}}
+            {{else}}
+                <p>
+                    You have no lists.
+                </p>
             {{/each}}
             {{> publisherListSubmit}}
         </div>
         <div class="col-md-8">
-                <p>Hier kommen die Todos hin.</p>
         </div>
     </div>
 </template>
