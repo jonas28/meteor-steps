@@ -1,6 +1,7 @@
 <template name="publisherTodoItem">
     <div class="post">
-        <h4 class="list-group-item-heading">{{title}}</h4>
-        <p class="list-group-item-text">{{comment}}</p>
+        <div class="list-item {{editingClass}}">
+            <input type="text" value="{{title}}" placeholder="Title"/>
+        </div>
     </div>
 </template>
