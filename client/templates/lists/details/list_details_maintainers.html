@@ -41,6 +41,13 @@
                         <input name="username" id="username" type="text" value="" placeholder="userName" class="form-control"/>
                     </div>
                 </div>
+                <div class="form-group">
+                    <select class="input-xlarge country" id="country" name="country">
+                        {{#each users}}
+                            <option value="{{_id}}">{{username}}</option>
+                        {{/each}}
+                    </select>
+                </div>
                 <input type="submit" value="Submit" class="btn btn-primary"/>
             </form>
         {{/if}}

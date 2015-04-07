@@ -24,3 +24,7 @@ Meteor.publish('singleTodo', function(id) {
     check(id, String);
     return Todos.find(id);
 });
+
+Meteor.publish('users', function() {
+    return Users.find();
+});
