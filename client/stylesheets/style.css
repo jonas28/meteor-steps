@@ -239,6 +239,10 @@ body {
     float: right;
 }
 
+.item {
+    cursor: move;
+}
+
 
 
 

@@ -11,6 +11,7 @@
         <div class="col-md-4">
             <h4>{{title}}</h4>
                 {{> publisherTodoSubmit}}
+                <div id="items">
                 {{#each todos}}
                     {{> publisherTodoItem}}
                 {{else}}
@@ -18,7 +19,7 @@
                         There are no todos.
                     </p>
                 {{/each}}
-
+                </div>
         </div>
         <div class="col-md-4">
         </div>
