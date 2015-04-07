@@ -1,0 +1,12 @@
+<template name="addMaintainer">
+    <form>
+        <div class="form-group">
+            <select id="userid" name="userid" class="form-control">
+                {{#each users}}
+                    <option value="{{_id}}">{{username}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+</template>

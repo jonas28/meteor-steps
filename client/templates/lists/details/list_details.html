@@ -11,6 +11,10 @@
         </ul>
     </ul>
     <div class="post">
+        {{#if isEarlyaccess}}
+            {{> listDetailsEarlyaccess}}
+        {{/if}}
+        {{> listDetailsTodos}}
         <h3>Maintainers</h3>
         <div class="bootcards-list">
             <div class="panel panel-default">
@@ -21,7 +25,6 @@
                 </div>
             </div>
         </div>
-        {{> listDetailsTodos}}
     </div>
     <div class="post">
         {{> listDetailsSteps}}

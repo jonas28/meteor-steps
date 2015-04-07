@@ -44,17 +44,10 @@ Template.publisherTodoItem.events({
     },
     'click .publish': function(e) {
         e.preventDefault();
-
-        if (confirm("Publish this todo?")) {
-            Todos.update(this._id, {$set: {status: 'published'}});
-        }
+        Todos.update(this._id, {$set: {status: 'published'}});
     },
     'click .unpublish': function(e) {
         e.preventDefault();
-
-        if (confirm("Unpublish this todo?")) {
-            Todos.update(this._id, {$set: {status: 'draft'}});
-        }
+        Todos.update(this._id, {$set: {status: 'draft'}});
     }
-
 });

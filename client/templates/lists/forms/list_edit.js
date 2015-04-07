@@ -1,3 +1,13 @@
+Template.listEdit.helpers({
+    status: function() {
+        var status = [
+            {name: "published"},
+            {name: "draft"}
+        ];
+        return status;
+    }
+});
+
 Template.listEdit.events({
     'submit form': function(e) {
         e.preventDefault();
@@ -6,7 +16,8 @@ Template.listEdit.events({
 
         var listProperties = {
             title: $(e.target).find('[name=title]').val(),
-            description: $(e.target).find('[name=description]').val()
+            description: $(e.target).find('[name=description]').val(),
+            status: $(e.target).find('[name=status]').val()
         };
 
         var user = Meteor.user();
