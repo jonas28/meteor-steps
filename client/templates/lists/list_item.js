@@ -9,3 +9,4 @@ Template.listItem.helpers({
         return Lists.find({original :  this._id}).count();
     }
 });
+

@@ -28,6 +28,7 @@ Template.publisherListItem.events({
     // we don't flood the server with updates (handles the event at most once
     // every 300ms)
     'keyup input[type=text]': _.throttle(function(event) {
-        Lists.update(this._id, {$set: {title: event.target.value}});
+        var user = Meteor.user()
+        Lists.update(this._id, {$set: {title: event.target.value}, $inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
     }, 300),
 });

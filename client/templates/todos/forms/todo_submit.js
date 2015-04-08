@@ -21,5 +21,6 @@ Template.todoSubmit.events({
 
             Router.go('todoPage', {_id: result._id});
         });
+
     }
 });

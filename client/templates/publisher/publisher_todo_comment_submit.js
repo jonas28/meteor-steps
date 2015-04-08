@@ -28,6 +28,12 @@ Template.publisherTodoCommentSubmit.events({
     // we don't flood the server with updates (handles the event at most once
     // every 300ms)
     'keyup textarea': _.throttle(function(event) {
-        Todos.update(this._id, {$set: {comment: event.target.value}});
+        var user = Meteor.user()
+        Todos.update(this._id, {$set: {comment: event.target.value}, $inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
+        var currentListId = this.listId;
+        Lists.update(currentListId, {$inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
+        // TODO: da scheinbar alle 300ms gesaved wird, werden mehrere Updates des Todos und der Liste durchgeführt.
     }, 300)
 });
+
+// TODO: Aufgaben, die aus diesem Template angelegt werden, werden nicht der Liste zugeordet.

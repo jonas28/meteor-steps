@@ -243,10 +243,13 @@ body {
     cursor: move;
 }
 
+#container {
+    display: block;
+}
 
-
-
-
-
-
-
+.box {
+    display: block;
+    width: 30%;
+    margin: 10px;
+    float: left;
+}

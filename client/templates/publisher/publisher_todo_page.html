@@ -1,6 +1,6 @@
 <template name="publisherTodoPage">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <h4>Deine Listen</h4>
             {{> publisherListSubmit}}
             {{#each lists}}
@@ -8,8 +8,8 @@
             {{/each}}
 
         </div>
-        <div class="col-md-3">
-            <h4>{{listTitle}}</h4>
+        <div class="col-md-4">
+            <h4>Tasks from {{listTitle}}</h4>
             {{> publisherTodoSubmit}}
             {{#each todos}}
                 {{> publisherTodoItem}}
@@ -20,7 +20,7 @@
             {{/each}}
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h4>{{title}}</h4>
                 {{> publisherTodoCommentSubmit}}
         </div>

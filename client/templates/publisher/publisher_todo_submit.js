@@ -5,7 +5,10 @@ Template.publisherTodoSubmit.events({
         var todo = {
             title: $(e.target).find('[name=title]').val(),
             listId: this._id
+            // TODO: listId sollte aus dem URL params gezogen werden.
         };
-        Meteor.call('todoInsert', todo, function(error, result) {});
+        Meteor.call('todoInsert', todo, function(error, result) {
+            Router.go('publisherTodoPage', {listId : todo.listId, todoId: result._id });
+        });
     }
 });

@@ -29,7 +29,7 @@ Template.todoEdit.events({
                 Router.go('todoPage', {_id: currentTodoId});
             }
         });
-
+        Lists.update(currentListId, {$inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
 
     },
 
