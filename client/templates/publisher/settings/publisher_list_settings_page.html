@@ -14,6 +14,24 @@
         <div class="col-md-8">
             <h4>Settings für {{title}}</h4>
                 {{> listEdit}}
+            <h4>Maintainers</h4>
+            <div class="post">
+                {{#if maintainers}}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr class="active"><th>Maintainer</th><th>Shares</th></tr>
+                            </thead>
+                            <tbody>
+                            {{#each maintainers}}
+                                {{> listDetailsMaintainerSharesItem}}
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                {{/if}}
+                {{> addMaintainer}}
+            </div>
         </div>
     </div>
 </template>
