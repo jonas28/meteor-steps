@@ -36,7 +36,7 @@ Template.publisherTodoItem.events({
         Todos.update(this._id, {$set: {title: event.target.value}, $inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
         var currentListId = this.listId;
         Lists.update(currentListId, {$inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
-        // TODO: da scheinbar alle 300ms gesaved wird, werden mehrere Updates des Todos und der Liste durchgeführt.
+        // TODO #48: da scheinbar alle 300ms gesaved wird, werden mehrere Updates des Todos und der Liste durchgeführt.
     }, 300),
     'click .delete': function(e) {
         e.preventDefault();
@@ -44,7 +44,7 @@ Template.publisherTodoItem.events({
         if (confirm("Delete this todo?")) {
             var currentTodoId = this._id;
             Todos.remove(currentTodoId);
-            // TODO: Wenn Todos gelöscht werden müssen vor der Löschung die entsprechenden Shares in der Liste gelöscht werden.
+            // TODO #49: Wenn Todos gelöscht werden müssen vor der Löschung die entsprechenden Shares in der Liste gelöscht werden.
         }
     },
     'click .publish': function(e) {
