@@ -10,7 +10,9 @@ Package.onUse(function (api) {
     api.use([
         'iron:router'
     ]);
-
+    api.use([
+        'templating'
+    ], 'client');
     // both
     api.addFiles([
         'lib/routers.js'
@@ -23,11 +25,5 @@ Package.onUse(function (api) {
     api.addFiles([
         'wunderlist.js'
     ], ['server']);
-
-
-    api.export([
-        'getTemplate',
-        'templates'
-    ]);
 
 });

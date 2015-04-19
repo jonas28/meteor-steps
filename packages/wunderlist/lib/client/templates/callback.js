@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-    Template[getTemplate('callback')].helpers({
+    Template.callback.helpers({
         code: function(){
             return '123456';
         }
