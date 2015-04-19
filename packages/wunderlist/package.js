@@ -1,29 +1,20 @@
 Package.describe({
-    name: 'wunderlist',
-    summary: "wunderlist package",
-    version: '0.0.1'
+    summary: "Wunderlist OAuth flow",
+    version: "0.0.1"
 });
 
-Package.onUse(function (api) {
-    api.versionsFrom('0.9.4');
-    api.export('Wunderlist');
-    api.use([
-        'iron:router'
-    ]);
-    api.use([
-        'templating'
-    ], 'client');
-    // both
-    api.addFiles([
-        'lib/routers.js'
-    ], ['client', 'server']);
-    // client
-    api.addFiles([
-        'lib/client/templates/callback.html',
-        'lib/client/templates/callback.js'
-    ], ['client']);
-    api.addFiles([
-        'wunderlist.js'
-    ], ['server']);
+Package.onUse(function(api) {
+    api.use('oauth2', ['client', 'server']);
+    api.use('oauth', ['client', 'server']);
+    api.use('http', ['server']);
+    api.use('underscore', 'client');
+    api.use('templating', 'client');
+    api.use('random', 'client');
+    api.use('service-configuration', ['client', 'server']);
 
+    api.export('Wunderlist');
+
+
+    api.addFiles('wunderlist_server.js', 'server');
+    api.addFiles('wunderlist_client.js', 'client');
 });

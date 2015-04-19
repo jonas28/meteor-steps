@@ -20,5 +20,8 @@ mrt:jquery-ui
 accounts-base
 accounts-facebook
 sjors:meteor-masonry
-wunderlist
 iron:location
+service-configuration
+oauth2
+github
+accounts-github
