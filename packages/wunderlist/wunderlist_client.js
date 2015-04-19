@@ -20,7 +20,7 @@ Wunderlist.requestCredential = function (options, credentialRequestCompleteCallb
     }
     var credentialToken = Random.secret();
 
-    var loginStyle = OAuth._loginStyle('wunderlist', config, options);
+    var loginStyle = OAuth._loginStyle('wunderlist', cgitonfig, options);
 
     var loginUrl =
         'https://www.wunderlist.com/oauth/authorize' +
@@ -36,3 +36,4 @@ Wunderlist.requestCredential = function (options, credentialRequestCompleteCallb
         credentialToken: credentialToken,
         popupOptions: {width: 900, height: 450}
     });
+};

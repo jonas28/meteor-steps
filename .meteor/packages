@@ -25,3 +25,5 @@ service-configuration
 oauth2
 github
 accounts-github
+wunderlist
+accounts-wunderlist

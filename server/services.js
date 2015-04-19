@@ -18,6 +18,16 @@ ServiceConfiguration.configurations.upsert(
     }
 );
 
+ServiceConfiguration.configurations.upsert(
+    { service: "wunderlist" },
+    {
+        $set: {
+            clientId: Meteor.settings.public.wunderlist.client_id,
+            secret: Meteor.settings.public.wunderlist.client_secret
+        }
+    }
+);
+
 
 
 
