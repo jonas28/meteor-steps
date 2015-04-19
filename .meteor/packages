@@ -21,3 +21,4 @@ accounts-base
 accounts-facebook
 sjors:meteor-masonry
 wunderlist
+iron:location

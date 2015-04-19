@@ -1,7 +1,8 @@
 Meteor.startup(function () {
     Template.callback.helpers({
-        code: function(){
-            return '123456';
+        code: function() {
+            var code = Router.current().params.query.code
+            return code;
         }
     });
 });
