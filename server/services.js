@@ -23,7 +23,8 @@ ServiceConfiguration.configurations.upsert(
     {
         $set: {
             clientId: Meteor.settings.public.wunderlist.client_id,
-            secret: Meteor.settings.public.wunderlist.client_secret
+            secret: Meteor.settings.public.wunderlist.client_secret,
+            redirectUrl: Meteor.settings.public.wunderlist.redirect_url
         }
     }
 );

@@ -20,12 +20,12 @@ Wunderlist.requestCredential = function (options, credentialRequestCompleteCallb
     }
     var credentialToken = Random.secret();
 
-    var loginStyle = OAuth._loginStyle('wunderlist', cgitonfig, options);
+    var loginStyle = OAuth._loginStyle('wunderlist', config, options);
 
     var loginUrl =
         'https://www.wunderlist.com/oauth/authorize' +
         '?client_id=' + config.clientId +
-        '&redirect_uri=' + OAuth._redirectUri('wunderlist', config) +
+        '&redirect_uri=' + config.redirectUrl +
         '&state=' + OAuth._stateParam(loginStyle, credentialToken);
 
     OAuth.launchLogin({

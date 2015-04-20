@@ -1,4 +1,4 @@
-Github = {};
+Wunderlist = {};
 
 OAuth.registerService('wunderlist', 2, null, function(query) {
 
@@ -26,6 +26,8 @@ var getAccessToken = function (query) {
         throw new ServiceConfiguration.ConfigError();
 
     var response;
+    console.log('versuche AccessToken zu bekommen.');
+    console.log('query: ' , query);
     try {
         response = HTTP.post(
             "https://www.wunderlist.com/oauth/access_token", {
@@ -34,11 +36,9 @@ var getAccessToken = function (query) {
                     "User-Agent": userAgent
                 },
                 params: {
-                    code: query.code,
                     client_id: config.clientId,
                     client_secret: OAuth.openSecret(config.secret),
-                    redirect_uri: OAuth._redirectUri('wunderlist', config),
-                    state: query.state
+                    code: query.code
                 }
             });
     } catch (err) {
@@ -53,11 +53,15 @@ var getAccessToken = function (query) {
 };
 
 var getIdentity = function (accessToken) {
+    var config = ServiceConfiguration.configurations.findOne({service: 'wunderlist'});
     try {
         return HTTP.get(
-            "a.wunderlist.com/api/v1/user", {
-                headers: {"User-Agent": userAgent},
-                params: {access_token: accessToken}
+            "http://a.wunderlist.com/api/v1/user", {
+                headers: {
+                    "User-Agent": userAgent,
+                    "X-Access-Token": accessToken,
+                    "X-Client-ID": config.clientId
+                }
             }).data;
     } catch (err) {
         throw _.extend(new Error("Failed to fetch identity from Wunderlist. " + err.message),
@@ -66,6 +70,6 @@ var getIdentity = function (accessToken) {
 };
 
 
-Github.retrieveCredential = function(credentialToken, credentialSecret) {
+Wunderlist.retrieveCredential = function(credentialToken, credentialSecret) {
     return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };
