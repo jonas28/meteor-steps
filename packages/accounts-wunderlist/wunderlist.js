@@ -9,7 +9,6 @@ if (Meteor.isClient) {
         }
 
         var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-        console.log('button geclicked');
         Wunderlist.requestCredential(options, credentialRequestCompleteCallback);
     };
 } else {

@@ -37,3 +37,13 @@ Wunderlist.requestCredential = function (options, credentialRequestCompleteCallb
         popupOptions: {width: 900, height: 450}
     });
 };
+
+Wunderlist.postList = function() {
+    var userId = Meteor.userId();
+    var user = Users.findOne(userId);
+    var accessToken = user.services.wunderlist.accessToken;
+    Meteor.call('postList', accessToken ,function(err, response) {
+         console.log(response);
+    });
+};
+

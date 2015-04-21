@@ -26,8 +26,7 @@ var getAccessToken = function (query) {
         throw new ServiceConfiguration.ConfigError();
 
     var response;
-    console.log('versuche AccessToken zu bekommen.');
-    console.log('query: ' , query);
+
     try {
         response = HTTP.post(
             "https://www.wunderlist.com/oauth/access_token", {
@@ -73,3 +72,35 @@ var getIdentity = function (accessToken) {
 Wunderlist.retrieveCredential = function(credentialToken, credentialSecret) {
     return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };
+
+
+
+Meteor.startup(function () {
+    Meteor.methods({
+        postList: function (accessToken) {
+            var userAgent = "Meteor";
+            if (Meteor.release)
+                userAgent += "/" + Meteor.release;
+            var config = ServiceConfiguration.configurations.findOne({service: 'wunderlist'});
+            try {
+                return HTTP.post(
+                    "http://a.wunderlist.com/api/v1/lists", {
+                        headers: {
+                            "User-Agent": userAgent,
+                            "X-Access-Token": accessToken,
+                            "X-Client-ID": config.clientId
+                        },
+                        data: {
+                            "title": 'Test'
+                        }
+                    }).data;
+            } catch (err) {
+                throw _.extend(new Error("Failed to fetch identity from Wunderlist. " + err.message),
+                    {response: err.response});
+            }
+        }
+    });
+});
+
+
+
