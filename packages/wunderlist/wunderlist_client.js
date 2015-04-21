@@ -38,12 +38,17 @@ Wunderlist.requestCredential = function (options, credentialRequestCompleteCallb
     });
 };
 
-Wunderlist.postList = function() {
+Wunderlist.postList = function(listId) {
     var userId = Meteor.userId();
     var user = Users.findOne(userId);
     var accessToken = user.services.wunderlist.accessToken;
-    Meteor.call('postList', accessToken ,function(err, response) {
-         console.log(response);
+    Meteor.call('postList', accessToken , listId , function(err, response) {
+
+
+        Meteor.call('postTodos', accessToken , listId , response , function(err, result) {
+            console.log(result);
+        });
+
     });
 };
 

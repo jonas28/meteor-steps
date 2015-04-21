@@ -77,7 +77,9 @@ Wunderlist.retrieveCredential = function(credentialToken, credentialSecret) {
 
 Meteor.startup(function () {
     Meteor.methods({
-        postList: function (accessToken) {
+        postList: function (accessToken, listId) {
+            var list = Lists.findOne({_id : listId});
+            var listTitle = list.title;
             var userAgent = "Meteor";
             if (Meteor.release)
                 userAgent += "/" + Meteor.release;
@@ -91,11 +93,34 @@ Meteor.startup(function () {
                             "X-Client-ID": config.clientId
                         },
                         data: {
-                            "title": 'Test'
+                            "title": listTitle
                         }
                     }).data;
             } catch (err) {
-                throw _.extend(new Error("Failed to fetch identity from Wunderlist. " + err.message),
+                throw _.extend(new Error("Failed to post List to Wunderlist. " + err.message),
+                    {response: err.response});
+            }
+        },
+        postTodos: function (accessToken, listId, response) {
+            var userAgent = "Meteor";
+            if (Meteor.release)
+                userAgent += "/" + Meteor.release;
+            var config = ServiceConfiguration.configurations.findOne({service: 'wunderlist'});
+            try {
+                return HTTP.post(
+                    "http://a.wunderlist.com/api/v1/tasks", {
+                        headers: {
+                            "User-Agent": userAgent,
+                            "X-Access-Token": accessToken,
+                            "X-Client-ID": config.clientId
+                        },
+                        data: {
+                            "list_id": response.id,
+                            "title": 'Dies ist eine Testaufgabe'
+                        }
+                    }).data;
+            } catch (err) {
+                throw _.extend(new Error("Failed to post Todos to Wunderlist. " + err.message),
                     {response: err.response});
             }
         }
