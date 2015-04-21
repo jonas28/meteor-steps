@@ -98,10 +98,10 @@ Meteor.startup(function () {
                     }).data;
             } catch (err) {
                 throw _.extend(new Error("Failed to post List to Wunderlist. " + err.message),
-                    {response: err.response});
+                    {result: err.result});
             }
         },
-        postTodos: function (accessToken, listId, response) {
+        postTodos: function (accessToken, todoTitle, wunderlistId) {
             var userAgent = "Meteor";
             if (Meteor.release)
                 userAgent += "/" + Meteor.release;
@@ -115,8 +115,8 @@ Meteor.startup(function () {
                             "X-Client-ID": config.clientId
                         },
                         data: {
-                            "list_id": response.id,
-                            "title": 'Dies ist eine Testaufgabe'
+                            "list_id": wunderlistId,
+                            "title": todoTitle
                         }
                     }).data;
             } catch (err) {

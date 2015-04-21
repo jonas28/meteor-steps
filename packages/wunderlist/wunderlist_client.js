@@ -42,13 +42,18 @@ Wunderlist.postList = function(listId) {
     var userId = Meteor.userId();
     var user = Users.findOne(userId);
     var accessToken = user.services.wunderlist.accessToken;
-    Meteor.call('postList', accessToken , listId , function(err, response) {
-
-
-        Meteor.call('postTodos', accessToken , listId , response , function(err, result) {
-            console.log(result);
+    Meteor.call('postList', accessToken , listId , function(err, result) {
+        // console.log('listId: ' + listId);
+        var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
+        originalTodos.forEach(function (todo) {
+            var todoTitle = todo.title;
+            var wunderlistId = result.id
+            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(err, response) {
+                // TODO: See error in browser console: "Exception in delivering result of invoking 'postTodos': ReferenceError: error is not defined"
+                if (error)
+                    return throwError(error.reason);
+            });
         });
-
     });
 };
 
