@@ -14,9 +14,17 @@
                     Export <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#" class="exportWunderlist">Wunderlist</a></li>
-                    <li><a href="#">Trello</a></li>
-                    <li><a href="#">Evernote</a></li>
+                    <li><a href="#" class="exportToWunderlist">Wunderlist</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Export <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    {{#each apps}}
+                        {{> appExportbuttonItem}}
+                    {{/each}}
                 </ul>
             </div>
         {{/if}}
