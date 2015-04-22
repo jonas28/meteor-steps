@@ -6,7 +6,7 @@ Template.listDetailsHeader.helpers({
 });
 
 Template.listDetailsHeader.events({
-    'click .postlist': function(e) {
+    'click .exportWunderlist': function(e) {
         e.preventDefault();
         var listId = this._id;
         return Wunderlist.postList(listId);

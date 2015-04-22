@@ -9,7 +9,16 @@
         {{/if}}
         {{#if currentUser}}
             <a class="btn btn-default fork" href="#">Fork</a>
-            <a class="btn btn-primary postlist" href="#" role="button">Export to Wunderlist</a>
+            <div class="btn-group">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Export <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" class="exportWunderlist">Wunderlist</a></li>
+                    <li><a href="#">Trello</a></li>
+                    <li><a href="#">Evernote</a></li>
+                </ul>
+            </div>
         {{/if}}
     </div>
 </template>
