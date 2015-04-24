@@ -6,7 +6,7 @@ Template.todoSubmit.events({
             title: $(e.target).find('[name=title]').val(),
             comment: $(e.target).find('[name=comment]').val(),
             listId: this._id,
-            status: 'published'
+            status: 'draft'
         };
 
 
