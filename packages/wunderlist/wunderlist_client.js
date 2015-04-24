@@ -44,6 +44,14 @@ Wunderlist.postList = function(listId) {
     var accessToken = user.services.wunderlist.accessToken;
     Meteor.call('postList', accessToken , listId , function(err, result) {
         // console.log('listId: ' + listId);
+        var exportedList = {
+            listId: listId,
+            app: 'Wunderlist'
+        };
+        Meteor.call('exportInsert', exportedList, function(error, result) {
+            if (error)
+                return throwError(error.reason);
+        });
         var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
         originalTodos.forEach(function (todo) {
             var todoTitle = todo.title;
