@@ -49,13 +49,9 @@ Wunderlist.postList = function(listId) {
             app: 'Wunderlist',
             externalObjectId: result.id
         };
-        Meteor.call('exportInsert', exportedList, function(error, result) {
+        Meteor.call('exportInsert', exportedList, function(error) {
             if (error)
                 return throwError(error.reason);
-        });
-        Lists.update(listId, { $inc: {exports: 1}}, function(error) {
-            if (error)
-                throwError(error.reason);
         });
         var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
         originalTodos.forEach(function (todo) {
