@@ -46,11 +46,16 @@ Wunderlist.postList = function(listId) {
         // console.log('listId: ' + listId);
         var exportedList = {
             listId: listId,
-            app: 'Wunderlist'
+            app: 'Wunderlist',
+            externalObjectId: result.id
         };
         Meteor.call('exportInsert', exportedList, function(error, result) {
             if (error)
                 return throwError(error.reason);
+        });
+        Lists.update(listId, { $inc: {exports: 1}}, function(error) {
+            if (error)
+                throwError(error.reason);
         });
         var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
         originalTodos.forEach(function (todo) {
