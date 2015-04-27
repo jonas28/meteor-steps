@@ -8,7 +8,7 @@ Template.userDetails.helpers({
         return this._id === userId;
     },
     exports: function() {
-        return Exports.find()
+        return Exports.find( { 'userId' : this._id});
     },
     lists: function() {
         return Lists.find( { 'maintainers.userId' : this._id});
