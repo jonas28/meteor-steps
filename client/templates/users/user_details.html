@@ -1,0 +1,39 @@
+<template name="userDetails">
+    <div class="post">
+        <div class="post-content">
+            <h3>{{profile.name}}</h3>
+            {{#if ownsProfile}}
+                <a class="btn btn-primary submit" href="{{pathFor 'userEdit'}}">Edit</a>
+            {{/if}}
+        </div>
+    </div>
+    <div class="post">
+        <div class="post-content">
+            <h4>Exports</h4>
+            <ul>
+                {{#each exports}}
+                    test
+                    <li>{{> exportItem}}</li>
+                {{else}}
+                    <p>
+                        Sorry. There are no exports.
+                    </p>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div id="container">
+        {{#each lists}}
+            {{> listItem}}
+        {{else}}
+            <p>
+                Sorry. There are no lists.
+            </p>
+        {{/each}}
+    </div>
+</template>
+
+
+
+
+

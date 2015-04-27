@@ -28,3 +28,12 @@ Meteor.publish('singleTodo', function(id) {
 Meteor.publish('users', function() {
     return Users.find();
 });
+
+Meteor.publish('singleUser', function(id) {
+    check(id, String);
+    return Users.find(id);
+});
+
+Meteor.publish('exports', function() {
+    return Exports.find();
+});
