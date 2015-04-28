@@ -57,10 +57,19 @@ Wunderlist.postList = function(listId) {
         originalTodos.forEach(function (todo) {
             var todoTitle = todo.title;
             var wunderlistId = result.id;
-            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(error) {
+            var todoComment = todo.comment;
+            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(error, result) {
                 if (error)
                     return throwError(error.reason);
+
+                var todoId = result.id;
+                Meteor.call('postComment', accessToken , todoComment , todoId , function(error) {
+                    if (error)
+                        return throwError(error.reason);
+                });
             });
+
+
         });
     });
 };

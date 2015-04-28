@@ -123,7 +123,30 @@ Meteor.startup(function () {
                 throw _.extend(new Error("Failed to post Todos to Wunderlist. " + err.message),
                     {response: err.response});
             }
-        }
+        },
+        postComment: function (accessToken, todoComment, todoId) {
+            var userAgent = "Meteor";
+            if (Meteor.release)
+                userAgent += "/" + Meteor.release;
+            var config = ServiceConfiguration.configurations.findOne({service: 'wunderlist'});
+            try {
+                return HTTP.post(
+                    "http://a.wunderlist.com/api/v1/notes", {
+                        headers: {
+                            "User-Agent": userAgent,
+                            "X-Access-Token": accessToken,
+                            "X-Client-ID": config.clientId
+                        },
+                        data: {
+                            "task_id": todoId,
+                            "content": todoComment
+                        }
+                    }).data;
+            } catch (err) {
+                throw _.extend(new Error("Failed to post Comment to Wunderlist. " + err.message),
+                    {response: err.response});
+            }
+        },
     });
 });
 
