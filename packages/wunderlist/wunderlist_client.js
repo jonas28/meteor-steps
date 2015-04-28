@@ -56,9 +56,8 @@ Wunderlist.postList = function(listId) {
         var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
         originalTodos.forEach(function (todo) {
             var todoTitle = todo.title;
-            var wunderlistId = result.id
-            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(err, response) {
-                // TODO: See error in browser console: "Exception in delivering result of invoking 'postTodos': ReferenceError: error is not defined"
+            var wunderlistId = result.id;
+            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(error) {
                 if (error)
                     return throwError(error.reason);
             });
