@@ -38,12 +38,11 @@ Wunderlist.requestCredential = function (options, credentialRequestCompleteCallb
     });
 };
 
-Wunderlist.postList = function(listId) {
+Wunderlist.postList = function(listId, listTitle) {
     var userId = Meteor.userId();
     var user = Users.findOne(userId);
     var accessToken = user.services.wunderlist.accessToken;
-    Meteor.call('postList', accessToken , listId , function(err, result) {
-        // console.log('listId: ' + listId);
+    Meteor.call('postListServer', accessToken , listId , listTitle, function(err, result) {
         var exportedList = {
             listId: listId,
             app: 'Wunderlist',
@@ -58,11 +57,11 @@ Wunderlist.postList = function(listId) {
             var todoTitle = todo.title;
             var wunderlistId = result.id;
             var todoComment = todo.comment;
-            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(error, result) {
+            Meteor.call('postTodos', accessToken , todoTitle , wunderlistId , function(error, answer) {
                 if (error)
                     return throwError(error.reason);
 
-                var todoId = result.id;
+                var todoId = answer.id;
                 Meteor.call('postComment', accessToken , todoComment , todoId , function(error) {
                     if (error)
                         return throwError(error.reason);
@@ -71,6 +70,7 @@ Wunderlist.postList = function(listId) {
 
 
         });
+
     });
 };
 
