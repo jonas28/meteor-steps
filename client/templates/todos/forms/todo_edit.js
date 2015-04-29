@@ -30,7 +30,7 @@ Template.todoEdit.events({
             }
         });
         Lists.update(currentListId, {$inc: {shares: 1}, $push: { activities: {userId: user._id, userName: user.username, activity: 'update', date: new Date()}}});
-
+        // TODO: Check why there are 2 List.updates in this file
     },
 
     'click .delete': function(e) {
