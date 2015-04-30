@@ -53,6 +53,9 @@ Wunderlist.postList = function(listId, listTitle) {
                 return throwError(error.reason);
         });
         var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
+        originalTodosCount = Todos.find({listId : listId, status : 'published'}).count();
+        // console.log('originalTodosCount: ' + originalTodosCount);
+        exportedTodosCount = 0;
         originalTodos.forEach(function (todo) {
             var todoTitle = todo.title;
             var wunderlistId = result.id;
@@ -62,9 +65,20 @@ Wunderlist.postList = function(listId, listTitle) {
                     return throwError(error.reason);
 
                 var todoId = answer.id;
-                Meteor.call('postComment', accessToken , todoComment , todoId , function(error) {
+
+
+                Meteor.call('postComment', accessToken , todoComment , todoId , function(error, feeback) {
                     if (error)
                         return throwError(error.reason);
+
+                    var commentId = feeback.id;
+                    if (commentId)
+                        exportedTodosCount = exportedTodosCount + 1;
+
+                    if (originalTodosCount == exportedTodosCount) {
+                        return throwError('Export Done!');
+                    }
+
                 });
             });
 
