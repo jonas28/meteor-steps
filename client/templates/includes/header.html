@@ -12,10 +12,17 @@
             </div>
             <div class="collapse navbar-collapse" id="navigation">
                 <ul class="nav navbar-nav">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            {{> searchBox }}
+                        </div>
+                    </form>
                     <li>
                         <a href="{{pathFor 'listsList'}}">Listen</a>
                     </li>
                     {{#if currentUser}}<li><a href="{{pathFor 'publisher'}}">Publisher</a></li>{{/if}}
+
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {{> loginButtons}}
