@@ -1,35 +1,29 @@
 <template name="listItem">
-    <div class="box">
-        <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-                <a href="{{pathFor 'listPage'}}">
-                <h3 class="panel-title pull-left">{{title}}</h3>
-                </a>
-                <a class="btn btn-default pull-right" href="{{pathFor 'listPage'}}">
-                    <i class="fa fa-check"></i>
-                    Details
-                </a>
-            </div>
-            <img src="/resources/list_cover.png" class="img-responsive">
-            <div class="panel-body">
-                {{exports}} Exports
-                <p>{{description}}</p>
-            </div>
-            <div class="list-group">
-                <div class="list-group-item">
-                    <div class="bootcards-list">
-                            {{#each maintainers}}
-                                {{> listsListmaintainerItem}}
-                            {{/each}}
-                    </div>
+
+    <div class="uk-width-small-1-2 uk-width-medium-1-3">
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card medium">
+                <div class="card-image">
+                    <img class="activator" src="/resources/list_cover.png">
+                    <span class="card-title">{{title}}
+                    {{#if isEarlyaccess}}<small>(Early Access)</small>{{/if}}
+                        </span>
+                </div>
+                <div class="card-content">
+                    {{description}}
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{title}} <i class="mdi-navigation-close right"></i></span>
+                    <p>{{description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{pathFor 'listPage'}}">Details</a>
+                    <a class="activator" href='#'>{{exports}} Exports</a>
+                    <div class="secondary-content">{{todosCount}} Todos</div>
                 </div>
             </div>
-            <div class="panel-footer">
-                <small>
-                    {{todosCount}} Todos
-                    {{#if isEarlyaccess}}(Early Access){{/if}}
-                </small>
-            </div>
         </div>
+    </div>
     </div>
 </template>

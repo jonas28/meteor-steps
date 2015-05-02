@@ -16,15 +16,11 @@
         {{/if}}
         {{> listDetailsTodos}}
         <h3>Maintainers</h3>
-        <div class="bootcards-list">
-            <div class="panel panel-default">
-                <div class="list-group">
-                    {{#each maintainers}}
-                        {{> listDetailsMaintainerItem}}
-                    {{/each}}
-                </div>
-            </div>
-        </div>
+            <ul class="collection">
+                {{#each maintainers}}
+                    {{> listDetailsMaintainerItem}}
+                {{/each}}
+            </ul>
     </div>
     <div class="post">
         {{> listDetailsSteps}}

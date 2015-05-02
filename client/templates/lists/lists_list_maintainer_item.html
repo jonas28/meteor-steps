@@ -1,6 +1,6 @@
 <template name="listsListmaintainerItem">
-    <a href="{{pathFor 'userPage' _id=userId}}"><img src="/resources/dummy_user.jpg" class="img-rounded pull-left"/></a>
-    <b class="list-group-item-heading"><a href="{{pathFor 'userPage' _id=userId}}">{{userName}}</a></b>
-    <p class="list-group-item-text">Tooltime GmbH</p>
+    <li class="collection-item">
+        <a href="{{pathFor 'userPage' _id=userId}}"><img src="/resources/dummy_user.jpg" height="30px"/></a><a href="{{pathFor 'userPage' _id=userId}}">{{userName}}</a>
+    </li>
 </template>
 
