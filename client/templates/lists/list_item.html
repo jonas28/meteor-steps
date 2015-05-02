@@ -1,29 +1,34 @@
 <template name="listItem">
-
-    <div class="uk-width-small-1-2 uk-width-medium-1-3">
-    <div class="row">
-        <div class="col s12 m12">
-            <div class="card medium">
-                <div class="card-image">
-                    <img class="activator" src="/resources/list_cover.png">
-                    <span class="card-title">{{title}}
-                    {{#if isEarlyaccess}}<small>(Early Access)</small>{{/if}}
-                        </span>
-                </div>
-                <div class="card-content">
-                    {{description}}
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{title}} <i class="mdi-navigation-close right"></i></span>
-                    <p>{{description}}</p>
-                </div>
-                <div class="card-action">
-                    <a href="{{pathFor 'listPage'}}">Details</a>
-                    <a class="activator" href='#'>{{exports}} Exports</a>
-                    <div class="secondary-content">{{todosCount}} Todos</div>
-                </div>
+    <div class="card">
+        <div class="image">
+            <a href="{{pathFor 'listPage'}}"><img src="/resources/list_cover.png"></a>
+        </div>
+        <div class="content">
+            <div class="header">{{title}}</div>
+            <div class="meta">
+                {{#if isEarlyaccess}}<span>Early Access</span>{{/if}}
+                {{#if isFork}}<span><a href="{{pathFor 'listPage' _id=original}}">Forked</a></span>{{/if}}
+            </div>
+            <div class="description">
+                {{description}}
             </div>
         </div>
-    </div>
+        <div class="extra content">
+            <div class="right floated author">
+                {{#each maintainers}}
+                    {{> listsListmaintainerItem}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="extra content">
+            <span class="right floated">
+               <i class="download icon"></i>
+                {{exports}} Exports
+            </span>
+            <span>
+                <i class="list icon"></i>
+                <span>{{todosCount}} Todos</span>
+            </span>
+        </div>
     </div>
 </template>

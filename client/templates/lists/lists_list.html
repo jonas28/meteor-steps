@@ -1,12 +1,20 @@
 <template name="listsList">
-    <div class="uk-grid">
-        {{#each lists}}
-        {{> listItem}}
+    <div class="container">
+        <div class="section">
+            <div class="ui cards">
+                {{#each lists}}
+                {{> listItem}}
 
-        {{else}}
-            <p>
-                Sorry. There are no lists.
-            </p>
-        {{/each}}
+                {{else}}
+                    <p>
+                        Sorry. There are no lists.
+                    </p>
+                {{/each}}
+            </div>
+        </div>
     </div>
 </template>
+
+
+
+

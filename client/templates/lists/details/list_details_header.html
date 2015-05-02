@@ -1,23 +1,34 @@
 <template name="listDetailsHeader">
-    <div class="jumbotron">
-        <h1>{{title}}</h1>
-        <p>{{description}}</p>
-        {{# if maintainer}}
-            <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
-            <a class="btn btn-default submit" href="{{pathFor 'todoSubmit'}}">Submit Todo</a>
-        {{/if}}
-        {{#if currentUser}}
-            <a class="btn btn-default fork" href="#">Fork</a>
-            <div class="btn-group">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                    Export <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    {{#each apps}}
-                        {{> appExportbuttonItem}}
-                    {{/each}}
-                </ul>
+    <div id="index-banner" class="list-header">
+        <div class="section">
+            <div class="container">
+                <h1 class="header center teal-text text-lighten-2">{{title}}</h1>
+                <p class="left-align light">{{description}}</p>
+                {{# if maintainer}}
+                    <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
+                    <a class="btn btn-default submit" href="{{pathFor 'todoSubmit'}}">Submit Todo</a>
+                {{/if}}
+                {{#if currentUser}}
+                    <a class="btn btn-default fork" href="#">Fork</a>
+                    <div class="btn-group">
+                        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                            Export <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            {{#each apps}}
+                                {{> appExportbuttonItem}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/if}}
+
             </div>
-        {{/if}}
+        </div>
     </div>
 </template>
+
+
+
+
+
+

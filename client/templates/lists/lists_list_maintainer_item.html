@@ -1,6 +1,4 @@
 <template name="listsListmaintainerItem">
-    <li class="collection-item">
-        <a href="{{pathFor 'userPage' _id=userId}}"><img src="/resources/dummy_user.jpg" height="30px"/></a><a href="{{pathFor 'userPage' _id=userId}}">{{userName}}</a>
-    </li>
+    <a href="{{pathFor 'userPage' _id=userId}}"><img class="ui avatar image" src="/resources/dummy_user.jpg" alt="{{userName}}" title="{{userName}}"></a>
 </template>
 

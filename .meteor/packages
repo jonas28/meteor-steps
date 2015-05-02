@@ -28,3 +28,5 @@ sergeyt:typeahead
 materialize:materialize
 accounts-ui
 mrt:uikit
+semantic:ui
+flemay:less-autoprefixer
