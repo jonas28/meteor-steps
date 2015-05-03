@@ -15,13 +15,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label>Status</label>
-                    <select class="browser-default" name="status">
-                        <option value="" disabled selected>Choose the status</option>
-                        <option value="draft">draft</option>
-                        <option value="earlyaccess">early access</option>
-                        <option value="published">published</option>
-                    </select>
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="status">
+                        <div class="default text">Status</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" data-value="draft">draft</div>
+                            <div class="item" data-value="earlyaccess">early access</div>
+                            <div class="item" data-value="published">published</div>
+                        </div>
+                    </div>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-primary"/>
             </form>

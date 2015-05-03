@@ -1,20 +1,24 @@
 <template name="publisherListInsightsPage">
-    <div class="row">
-        <div class="col-md-4">
-            <h4>Deine Listen</h4>
-            {{> publisherListSubmit}}
-            {{#each lists}}
-                {{> publisherListItem}}
-            {{else}}
-                <p>
-                    You have no lists.
-                </p>
-            {{/each}}
-        </div>
-        <div class="col-md-8">
-            <h4>Insights für {{title}}</h4>
-            {{> publisherListInsightsTable}}
-            {{> publisherListInsightsCharts}}
+    <div class="container">
+        <div class="section">
+            <div class="ui stackable two column grid">
+                <div class="column">
+                    <h4>Deine Listen</h4>
+                    {{> publisherListSubmit}}
+                    {{#each lists}}
+                        {{> publisherListItem}}
+                    {{else}}
+                        <p>
+                            You have no lists.
+                        </p>
+                    {{/each}}
+                </div>
+                <div class="column">
+                    <h4>Insights für {{title}}</h4>
+                    {{> publisherListInsightsTable}}
+                    {{> publisherListInsightsCharts}}
+                </div>
+            </div>
         </div>
     </div>
 </template>

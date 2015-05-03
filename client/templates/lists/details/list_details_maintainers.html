@@ -10,7 +10,9 @@
             <li role="presentation"><a href="{{pathFor 'listPage'}}/forks">Forks</a></li>
         </ul>
     </ul>
-    <div class="post">
+    <div class="container">
+        <div class="section">
+            <div class="post">
         <h3>Maintainers</h3>
         {{#if maintainers}}
 
@@ -30,6 +32,8 @@
             <h3>Add new Maintainer</h3>
                 {{> addMaintainer}}
         {{/if}}
+    </div>
+        </div>
     </div>
 </template>
 

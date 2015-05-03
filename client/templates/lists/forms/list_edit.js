@@ -9,6 +9,15 @@ Template.listEdit.helpers({
     // TODO #46: Der aktuelle Status wird noch nicht als option value active genutzt.
 });
 
+Template.listEdit.rendered = function () {
+    this.$('.dropdown')
+        .dropdown({
+            // you can use any ui transition
+            transition: 'drop'
+        })
+    ;
+};
+
 Template.listEdit.events({
     'submit form': function(e) {
         e.preventDefault();

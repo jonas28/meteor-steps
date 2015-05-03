@@ -21,6 +21,6 @@ Template.listDetailsHeader.rendered = function () {
         })
     ;
 
-}
+};
 
 

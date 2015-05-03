@@ -4,3 +4,5 @@ Template.publisherListSettingsPage.helpers({
         return Lists.find({"maintainers.userId" : userId});
     }
 });
+
+
