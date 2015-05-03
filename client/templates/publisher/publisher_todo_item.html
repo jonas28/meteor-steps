@@ -1,19 +1,23 @@
 <template name="publisherTodoItem">
-    <div class="item">
-    <div class="post">
-        <div class="list-item {{editingClass}}">
-            <input type="text" value="{{title}}" placeholder="Title"/>
-            <div class ="publisher-list-buttons">
-                <a href="/publisher/lists/{{listId}}/todos/{{_id}}"><i class="comment icon"></i></a>
-                {{#if isPublished}}
-                    <a class="unpublish" href="#"><i class="hide icon"></i></a>
-                {{else}}
-                    <a class="publish" href="#"><i class="hide icon"></i></a>
-                {{/if}}
-                <a class="delete" href="#"><i class="trash icon"></i></a>
+    <div class="ui card">
+        <div class="content">
+            <div class="description">
+                <div class="list-item {{editingClass}}">
+                    <input type="text" value="{{title}}" placeholder="Title"/>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="extra content">
+            <a href="/publisher/lists/{{listId}}/todos/{{_id}}"><i class="comment icon"></i></a>
+            {{#if isPublished}}
+                <a class="unpublish" href="#"><i class="hide icon"></i></a>
+            {{else}}
+                <a class="publish" href="#"><i class="hide icon"></i></a>
+            {{/if}}
+            <a class="delete" href="#"><i class="trash icon"></i></a>
+        </div>
     </div>
 </template>
+
+
 

@@ -1,7 +1,13 @@
 <template name="publisherListItem">
-    <div class="post">
-        <div class="list-item {{editingClass}}">
-            <input type="text" value="{{title}}" placeholder="Title"/>
+    <div class="ui card">
+        <div class="content">
+            <div class="description">
+                <div class="list-item {{editingClass}}">
+                    <input type="text" value="{{title}}" placeholder="Title"/>
+                </div>
+            </div>
+        </div>
+        <div class="extra content">
             <div class ="publisher-todo-buttons">
                 <a href="{{pathFor 'publisherListPage'}}"><i class="list icon"></i></a>
                 <a href="{{pathFor 'publisherListSettingsPage'}}"><i class="setting icon"></i></a>
@@ -11,8 +17,5 @@
         </div>
     </div>
 </template>
-
-
-
 
 
