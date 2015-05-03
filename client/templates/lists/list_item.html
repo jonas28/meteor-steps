@@ -1,7 +1,12 @@
 <template name="listItem">
     <div class="card">
-        <div class="image">
-            <a href="{{pathFor 'listPage'}}"><img src="/resources/list_cover.png"></a>
+        <div class="ui fluid image">
+            {{#if isEarlyaccess}}
+                <div class="ui black ribbon label">
+                    Early Access
+                </div>
+            {{/if}}
+             <a href="{{pathFor 'listPage'}}"><img src="/resources/list_cover.png"></a>
         </div>
         <div class="content">
             <div class="header">{{title}}</div>
@@ -11,6 +16,11 @@
             </div>
             <div class="description">
                 {{description}}
+                {{#each categories}}
+                    <div class="ui tiny label">
+                        {{categoryName}}
+                    </div>
+                {{/each}}
             </div>
         </div>
         <div class="extra content">

@@ -13,6 +13,8 @@ Template.listItem.helpers({
     },
     isFork: function() {
         return (typeof this.original != 'undefined');
+    },
+    categories: function() {
+        return this.categories;
     }
-
 });
