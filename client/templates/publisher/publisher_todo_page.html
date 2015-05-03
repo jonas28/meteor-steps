@@ -1,28 +1,32 @@
 <template name="publisherTodoPage">
-    <div class="row">
-        <div class="col-md-4">
-            <h4>Deine Listen</h4>
-            {{> publisherListSubmit}}
-            {{#each lists}}
-                {{> publisherListItem}}
-            {{/each}}
+    <div class="container">
+        <div class="section">
+            <div class="ui stackable three column grid">
+                <div class="column">
+                    <h4>Deine Listen</h4>
+                    {{> publisherListSubmit}}
+                    {{#each lists}}
+                        {{> publisherListItem}}
+                    {{/each}}
 
-        </div>
-        <div class="col-md-4">
-            <h4>Tasks from {{listTitle}}</h4>
-            {{> publisherTodoSubmit2}}
-            {{#each todos}}
-                {{> publisherTodoItem}}
-            {{else}}
-                <p>
-                    There are no todos.
-                </p>
-            {{/each}}
+                </div>
+                <div class="column">
+                    <h4>Tasks from {{listTitle}}</h4>
+                    {{> publisherTodoSubmit2}}
+                    {{#each todos}}
+                        {{> publisherTodoItem}}
+                    {{else}}
+                        <p>
+                            There are no todos.
+                        </p>
+                    {{/each}}
 
-        </div>
-        <div class="col-md-4">
-            <h4>{{title}}</h4>
-                {{> publisherTodoCommentSubmit}}
+                </div>
+                <div class="column">
+                    <h4>{{title}}</h4>
+                        {{> publisherTodoCommentSubmit}}
+                </div>
+            </div>
         </div>
     </div>
 </template>

@@ -10,6 +10,9 @@ Template.listItem.helpers({
     },
     isEarlyaccess: function() {
         return this.status == 'earlyaccess';
+    },
+    isFork: function() {
+        return (typeof this.original != 'undefined');
     }
-});
 
+});

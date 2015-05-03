@@ -1,7 +1,12 @@
 <template name="listDetailsMaintainerItem">
-    <div class="list-group-item">
-        <a href="{{pathFor 'userPage' _id=userId}}"><img src="/resources/dummy_user.jpg" class="img-rounded pull-left"/></a>
-        <b class="list-group-item-heading"><a href="{{pathFor 'userPage' _id=userId}}">{{userName}}</a></b>
-        <p class="list-group-item-text">Tooltime GmbH</p>
-    </div>
+    <li class="collection-item avatar">
+        <a href="{{pathFor 'userPage' _id=userId}}"><img src="/resources/dummy_user.jpg" alt="" class="circle"></a>
+        <a href="{{pathFor 'userPage' _id=userId}}"><span class="title">{{userName}}</span></a>
+        <p>Tooltime GmbH<br></p>
+    </li>
 </template>
+
+
+
+
+

@@ -1,19 +1,23 @@
 <template name="publisher">
-    <div class="row">
-        <div class="col-md-4">
-            <h4>Deine Listen</h4>
-            {{> publisherListSubmit}}
-            {{#each lists}}
-                    {{> publisherListItem}}
-            {{else}}
-                <p>
-                    You have no lists.
-                </p>
-            {{/each}}
-        </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
+    <div class="container">
+        <div class="section">
+            <div class="ui stackable three column grid">
+                <div class="column">
+                    <h4>Deine Listen</h4>
+                    {{> publisherListSubmit}}
+                    {{#each lists}}
+                            {{> publisherListItem}}
+                    {{else}}
+                        <p>
+                            You have no lists.
+                        </p>
+                    {{/each}}
+                </div>
+                <div class="column">
+                </div>
+                <div class="column">
+                </div>
+            </div>
         </div>
     </div>
 </template>

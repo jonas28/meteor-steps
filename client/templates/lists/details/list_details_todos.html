@@ -1,8 +1,6 @@
 <template name="listDetailsTodos">
     <h3>Todos</h3>
-    <div class="bootcards-list">
-        <div class="panel panel-default">
-            <div class="list-group">
+    <div class="ui cards">
                     {{#each todos}}
                         {{> todoItem}}
                     {{else}}
@@ -10,8 +8,6 @@
                         There are no todos in this list.
                     </p>
                     {{/each}}
-            </div>
-        </div>
     </div>
 </template>
 

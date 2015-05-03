@@ -6,17 +6,13 @@
 
 meteor-platform
 insecure
-mizzao:bootstrap-3
 underscore
 iron:router
 sacha:spin
-ian:accounts-ui-bootstrap-3
 accounts-password
 http
 aldeed:autoform
 aldeed:collection2
-pcuci:bootcards
-mrt:jquery-ui
 accounts-base
 accounts-facebook
 sjors:meteor-masonry
@@ -28,3 +24,8 @@ accounts-github
 wunderlist
 accounts-wunderlist
 sergeyt:typeahead
+materialize:materialize
+accounts-ui
+semantic:ui
+flemay:less-autoprefixer
+jquery

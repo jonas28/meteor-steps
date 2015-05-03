@@ -7,3 +7,20 @@ Template.listDetailsHeader.helpers({
         return Apps.find();
     }
 });
+
+Template.listDetailsHeader.rendered = function () {
+    this.$('.dropdown')
+        .dropdown({
+            // you can use any ui transition
+            transition: 'drop',
+            onChange: function(value) {
+                $('.ui.modal')
+                    .modal('show')
+                ;
+            }
+        })
+    ;
+
+}
+
+

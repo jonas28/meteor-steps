@@ -1,8 +1,16 @@
 <template name="todoItem">
-    <a href="{{pathFor 'todoPage'}}" class="list-group-item">
-        <h4 class="list-group-item-heading">{{title}}</h4>
-        <p class="list-group-item-text">{{comment}}</p>
-    </a>
+    <div class="card"> 
+        <div class="content">
+            <a class="header" href="{{pathFor 'todoPage'}}">{{title}}</a>
+            <div class="description">
+                {{comment}}
+            </div>
+        </div>
+        <div class="ui bottom attached button">
+            <i class="add icon"></i>
+            Add Pullrequest
+        </div>
+    </div>
 </template>
 
 

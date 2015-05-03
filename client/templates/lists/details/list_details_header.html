@@ -1,23 +1,58 @@
 <template name="listDetailsHeader">
-    <div class="jumbotron">
-        <h1>{{title}}</h1>
-        <p>{{description}}</p>
-        {{# if maintainer}}
-            <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
-            <a class="btn btn-default submit" href="{{pathFor 'todoSubmit'}}">Submit Todo</a>
-        {{/if}}
-        {{#if currentUser}}
-            <a class="btn btn-default fork" href="#">Fork</a>
-            <div class="btn-group">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                    Export <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    {{#each apps}}
-                        {{> appExportbuttonItem}}
-                    {{/each}}
-                </ul>
+    <div id="index-banner" class="list-header">
+        <div class="section">
+            <div class="container">
+                <h1 class="header center teal-text text-lighten-2">{{title}}</h1>
+                <p class="left-align light">{{description}}</p>
+                <div class="row center">
+                    <div class="ui floating dropdown button">
+                        <div class="text">Export</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            {{#each apps}}
+                                {{> appExportbuttonItem}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="ui modal">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Authorization
+                    </div>
+                    <div class="content">
+                        <div class="image">
+                            BILD
+                        </div>
+                        <div class="description">
+                            The Wunderlist API uses OAuth2 to allow external applications to request authorization to a user’s Wunderlist account without directly handling their password.
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui button">Cancel</div>
+                        <div class="ui button">OK</div>
+                    </div>
+                </div>
+                {{# if maintainer}}
+                    <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
+                    <a class="btn btn-default submit" href="{{pathFor 'todoSubmit'}}">Submit Todo</a>
+                {{/if}}
+                {{#if currentUser}}
+                    <a class="btn btn-default fork" href="#">Fork</a>
+                {{/if}}
+
             </div>
-        {{/if}}
+        </div>
     </div>
 </template>
+
+
+
+
+
+
+
+
+
+
+

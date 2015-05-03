@@ -1,35 +1,34 @@
 <template name="listItem">
-    <div class="box">
-        <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-                <a href="{{pathFor 'listPage'}}">
-                <h3 class="panel-title pull-left">{{title}}</h3>
-                </a>
-                <a class="btn btn-default pull-right" href="{{pathFor 'listPage'}}">
-                    <i class="fa fa-check"></i>
-                    Details
-                </a>
+    <div class="card">
+        <div class="image">
+            <a href="{{pathFor 'listPage'}}"><img src="/resources/list_cover.png"></a>
+        </div>
+        <div class="content">
+            <div class="header">{{title}}</div>
+            <div class="meta">
+                {{#if isEarlyaccess}}<span>Early Access</span>{{/if}}
+                {{#if isFork}}<span><a href="{{pathFor 'listPage' _id=original}}">Forked</a></span>{{/if}}
             </div>
-            <img src="/resources/list_cover.png" class="img-responsive">
-            <div class="panel-body">
+            <div class="description">
+                {{description}}
+            </div>
+        </div>
+        <div class="extra content">
+            <div class="right floated author">
+                {{#each maintainers}}
+                    {{> listsListmaintainerItem}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="extra content">
+            <span class="right floated">
+               <i class="download icon"></i>
                 {{exports}} Exports
-                <p>{{description}}</p>
-            </div>
-            <div class="list-group">
-                <div class="list-group-item">
-                    <div class="bootcards-list">
-                            {{#each maintainers}}
-                                {{> listsListmaintainerItem}}
-                            {{/each}}
-                    </div>
-                </div>
-            </div>
-            <div class="panel-footer">
-                <small>
-                    {{todosCount}} Todos
-                    {{#if isEarlyaccess}}(Early Access){{/if}}
-                </small>
-            </div>
+            </span>
+            <span>
+                <i class="list icon"></i>
+                <span>{{todosCount}} Todos</span>
+            </span>
         </div>
     </div>
 </template>

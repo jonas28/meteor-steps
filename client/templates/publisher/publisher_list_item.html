@@ -1,12 +1,18 @@
 <template name="publisherListItem">
-    <div class="post">
-        <div class="list-item {{editingClass}}">
-            <input type="text" value="{{title}}" placeholder="Title"/>
+    <div class="ui card">
+        <div class="content">
+            <div class="description">
+                <div class="list-item {{editingClass}}">
+                    <input type="text" value="{{title}}" placeholder="Title"/>
+                </div>
+            </div>
+        </div>
+        <div class="extra content">
             <div class ="publisher-todo-buttons">
-                <a class="btn btn-default btn-xs" href="{{pathFor 'publisherListPage'}}"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
-                <a class="btn btn-default btn-xs" href="{{pathFor 'publisherListSettingsPage'}}"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
-                <a class="btn btn-default btn-xs" href="{{pathFor 'publisherListInsightsPage'}}"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span></a>
-                <a class="btn btn-default btn-xs" href="{{pathFor 'listPage'}}"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                <a href="{{pathFor 'publisherListPage'}}"><i class="list icon"></i></a>
+                <a href="{{pathFor 'publisherListSettingsPage'}}"><i class="setting icon"></i></a>
+                <a href="{{pathFor 'publisherListInsightsPage'}}"><i class="line chart icon"></i></a>
+                <a href="{{pathFor 'listPage'}}"><i class="share icon"></i></a>
             </div>
         </div>
     </div>

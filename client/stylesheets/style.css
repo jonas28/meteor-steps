@@ -21,11 +21,6 @@ body {
 }
 
 
-.navbar {
-    margin-bottom: 10px; }
-/* line 32, ../sass/style.scss */
-.navbar .navbar-inner {
-    border-radius: 0px 0px 3px 3px; }
 
 .navbar-brand img {
     height: 30px;
@@ -58,10 +53,6 @@ body {
     -moz-transition: all 300ms 0ms ease-in;
     -o-transition: all 300ms 0ms ease-in;
     transition: all 300ms 0ms ease-in; }
-.post .upvote {
-    display: block;
-    margin: 7px 12px 0 0;
-    float: left; }
 .post .post-content {
     float: left; }
 .post .post-content h3 {
@@ -82,20 +73,6 @@ body {
     display: block;
     float: right;
     margin-top: 7px; }
-
-.comments {
-    list-style-type: none;
-    margin: 0; }
-.comments li h4 {
-    font-size: 16px;
-    margin: 0; }
-.comments li h4 .date {
-    font-size: 12px;
-    font-weight: normal; }
-.comments li h4 a {
-    font-size: 12px; }
-.comments li p:last-child {
-    margin-bottom: 0; }
 
 .dropdown-menu span {
     display: block;
@@ -122,33 +99,6 @@ body {
     height: 100px;
 }
 
-.jumbotron{
-    text-align: center;
-    background: url(http://riotdesign.eu/assets/img/home-slider/bg-archea.jpg) no-repeat center;
-    background-size: cover;
-}
-.jumbotron h1{
-    font-family: Lato, Helvetica Neue, Helvetica, sans-serif !important;
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 200;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding-top: 40px;
-    max-width: 640px;
-    color: #ffffff;
-
-}
-
-.jumbotron p{
-    font-family: Lato, Helvetica Neue, Helvetica, sans-serif !important;
-    font-size: 20px;
-    max-width: 640px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #ffffff;
-}
 
 @-webkit-keyframes fadeOut {
     0% {opacity: 0;}
@@ -192,13 +142,6 @@ body {
     border-top: 1px solid #E5E5E5;
 }
 
-.footer {
-    margin-top: 45px;
-    padding-top: 35px;
-    padding-bottom: 36px;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
-}
 
 .wunderlistexample img {
     width: 360px;
@@ -211,9 +154,20 @@ body {
 }
 
 
+. publisher-todo-buttons {
+
+}
+
+
+. publisher-list-buttons {
+
+}
+
+.item {
+    cursor: move;
+}
+
 .list-item input[type="text"] {
-    width: 60%;
-    float: left;
     border: 0px;
     outline: none;
 }
@@ -226,39 +180,12 @@ body {
     outline: none;
 }
 
-. publisher-todo-buttons {
-    display: block;
-    width: 40%;
-    float: right;
-}
-
-
-. publisher-list-buttons {
-    display: block;
-    width: 40%;
-    float: right;
-}
-
-.item {
-    cursor: move;
-}
-
-#container {
-    display: block;
-}
-
-.box {
-    display: block;
-    width: 30%;
-    margin: 10px;
-    float: left;
-}
 
 .tt-input, /* UPDATE: newer versions use tt-input instead of tt-query */
 .tt-hint {
     display: block;
     width: 100%;
-    height: 34px;
+    height: 38px;
     padding: 8px 12px;
     font-size: 14px;
     line-height: 1.428571429;
@@ -282,17 +209,17 @@ body {
 }
 
 .tt-dropdown-menu {
-    width: 422px;
-    margin-top: 12px;
+    width: 350px;
+    margin-top: 32px;
     padding: 8px 0;
     background-color: #fff;
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 .tt-suggestion {
+    color: #999;
     padding: 3px 20px;
     font-size: 14px;
     line-height: 24px;
@@ -306,4 +233,64 @@ body {
 
 .tt-suggestion p {
     margin: 0;
+}
+
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.button-collapse {
+    color: #26a69a;
+}
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+    width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    #index-banner .section {
+        top: 0;
+    }
+}
+
+
+.icon-block {
+    padding: 0 15px;
+}
+
+footer.page-footer {
+    margin: 0;
+}
+
+.list-header {
+    background-image: url("/resources/background2.jpg");
 }

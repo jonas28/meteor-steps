@@ -13,10 +13,10 @@
     <div class="post">
         <h3>Maintainers</h3>
         {{#if maintainers}}
-            <div class="table-responsive">
-                <table class="table table-hover">
+
+                <table>
                     <thead>
-                    <tr class="active"><th>Maintainer</th><th>Shares</th></tr>
+                    <tr><th>Maintainer</th><th>Shares</th></tr>
                     </thead>
                     <tbody>
                     {{#each maintainers}}
@@ -24,7 +24,7 @@
                     {{/each}}
                     </tbody>
                 </table>
-            </div>
+
         {{/if}}
         {{# if maintainer}}
             <h3>Add new Maintainer</h3>
