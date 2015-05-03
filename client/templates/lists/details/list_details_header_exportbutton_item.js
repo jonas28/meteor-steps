@@ -6,6 +6,5 @@ Template.appExportbuttonItem.events({
     },
     'click .exportToEvernote': function(e) {
         e.preventDefault();
-        alert('coming soon!');
     }
 });

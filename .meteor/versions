@@ -54,8 +54,6 @@ minimongo@1.0.8
 mobile-status-bar@1.0.3
 momentjs:moment@2.8.4
 mongo@1.1.0
-mrt:jquery-ui@1.9.2
-mrt:uikit@1.0.0
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
 oauth2@1.1.3

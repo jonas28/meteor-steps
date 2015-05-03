@@ -13,7 +13,6 @@ accounts-password
 http
 aldeed:autoform
 aldeed:collection2
-mrt:jquery-ui
 accounts-base
 accounts-facebook
 sjors:meteor-masonry
@@ -27,6 +26,6 @@ accounts-wunderlist
 sergeyt:typeahead
 materialize:materialize
 accounts-ui
-mrt:uikit
 semantic:ui
 flemay:less-autoprefixer
+jquery
