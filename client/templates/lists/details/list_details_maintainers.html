@@ -14,8 +14,10 @@
         <div class="section">
             <div class="post">
         <h3>Maintainers</h3>
+        {{# if maintainer}}
+            {{> addMaintainer}}
+        {{/if}}
         {{#if maintainers}}
-
                 <table>
                     <thead>
                     <tr><th>Maintainer</th><th>Shares</th></tr>
@@ -27,10 +29,6 @@
                     </tbody>
                 </table>
 
-        {{/if}}
-        {{# if maintainer}}
-            <h3>Add new Maintainer</h3>
-                {{> addMaintainer}}
         {{/if}}
     </div>
         </div>

@@ -4,6 +4,7 @@ Template.addMaintainer.helpers({
     }
 });
 
+
 Template.addMaintainer.rendered = function () {
     this.$('.dropdown')
         .dropdown({
@@ -11,6 +12,7 @@ Template.addMaintainer.rendered = function () {
             transition: 'drop'
         })
     ;
+    Meteor.typeahead.inject();
 };
 
 Template.listDetailsMaintainers.events({
@@ -18,10 +20,7 @@ Template.listDetailsMaintainers.events({
         e.preventDefault();
         // var currentListId = this._id;
         var currentListId = Template.parentData(1)._id;
-
-        console.log('currentListId: ', currentListId);
         var selectedUserId = $(e.currentTarget).data('value');
-        console.log('selectedUserId: ', selectedUserId);
         var newmaintainer = Users.findOne({_id : selectedUserId});
 
         var listProperties = {

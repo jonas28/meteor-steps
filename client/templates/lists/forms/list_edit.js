@@ -5,9 +5,14 @@ Template.listEdit.helpers({
             {name: "draft"}
         ];
         return status;
+        // TODO #46: Der aktuelle Status wird noch nicht als option value active genutzt.
+    },
+    categories: function() {
+        return this.categories;
     }
-    // TODO #46: Der aktuelle Status wird noch nicht als option value active genutzt.
 });
+
+
 
 Template.listEdit.rendered = function () {
     this.$('.dropdown')
