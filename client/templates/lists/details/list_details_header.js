@@ -1,3 +1,5 @@
+
+
 Template.listDetailsHeader.helpers({
     maintainer: function() {
         var userId = Meteor.userId();
@@ -5,8 +7,13 @@ Template.listDetailsHeader.helpers({
     },
     apps: function() {
         return Apps.find();
+    },
+    counter: function () {
+        console.log('counter helper is running')
+        return Wunderlist.getCount();
     }
 });
+
 
 Template.listDetailsHeader.created = function () {
     this.exportedTodosCount = new ReactiveVar();

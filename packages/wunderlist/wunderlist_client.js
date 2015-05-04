@@ -5,6 +5,8 @@ Wunderlist = {};
 // @param credentialRequestCompleteCallback {Function} Callback function to call on
 //   completion. Takes one argument, credentialToken on success, or Error on
 //   error.
+
+
 Wunderlist.requestCredential = function (options, credentialRequestCompleteCallback) {
     // support both (options, callback) and (callback).
     if (!credentialRequestCompleteCallback && typeof options === 'function') {
@@ -65,8 +67,6 @@ Wunderlist.postList = function(listId, listTitle) {
                     return throwError(error.reason);
 
                 var todoId = answer.id;
-
-
                 Meteor.call('postComment', accessToken , todoComment , todoId , function(error, feeback) {
                     if (error)
                         return throwError(error.reason);
@@ -78,13 +78,15 @@ Wunderlist.postList = function(listId, listTitle) {
                     if (originalTodosCount == exportedTodosCount) {
                         return throwError('Export Done!');
                     }
-
                 });
             });
-
-
         });
-
     });
+};
+
+Wunderlist.getCount = function () {
+    var Counter = 23;
+    //return Session.get('count');
+    return Counter;
 };
 
