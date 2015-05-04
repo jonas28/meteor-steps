@@ -13,9 +13,9 @@ Template.publisherListPage.rendered = function() {
         stop: function(e, ui) {
             // get the dragged html element and the one before
             //   and after it
-            el = ui.item.get(0)
-            before = ui.item.prev().get(0)
-            after = ui.item.next().get(0)
+            el = ui.item.get(0);
+            before = ui.item.prev().get(0);
+            after = ui.item.next().get(0);
 
             // Here is the part that blew my mind!
             //  Blaze.getData takes as a parameter an html element

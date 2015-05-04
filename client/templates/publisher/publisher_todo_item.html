@@ -1,20 +1,22 @@
 <template name="publisherTodoItem">
-    <div class="ui card">
-        <div class="content">
-            <div class="description">
-                <div class="list-item {{editingClass}}">
-                    <input type="text" value="{{title}}" placeholder="Title"/>
+    <div class="item">
+        <div class="ui card">
+            <div class="content">
+                <div class="description">
+                    <div class="list-item {{editingClass}}">
+                        <input type="text" value="{{title}}" placeholder="Title"/>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="extra content">
-            <a href="/publisher/lists/{{listId}}/todos/{{_id}}"><i class="comment icon"></i></a>
-            {{#if isPublished}}
-                <a class="unpublish" href="#"><i class="hide icon"></i></a>
-            {{else}}
-                <a class="publish" href="#"><i class="unhide icon"></i></a>
-            {{/if}}
-            <a class="delete" href="#"><i class="trash icon"></i></a>
+            <div class="extra content">
+                <a href="/publisher/lists/{{listId}}/todos/{{_id}}" title="Comment"><i class="comment icon"></i></a>
+                {{#if isPublished}}
+                    <a class="unpublish" href="#" title="Unpublish"><i class="undo icon"></i></a>
+                {{else}}
+                    <a class="publish" href="#" title="Publish"><i class="unhide icon"></i></a>
+                {{/if}}
+                <a class="delete" href="#" title="Delete"><i class="trash icon"></i></a>
+            </div>
         </div>
     </div>
 </template>

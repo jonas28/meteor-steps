@@ -5,7 +5,7 @@ Template.publisherTodoItem.helpers({
         return Session.equals(EDITING_KEY, this._id) && 'editing';
     },
     isPublished: function() {
-        return this.status === 'published';
+        return this.status == 'published';
     }
 });
 
