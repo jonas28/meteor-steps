@@ -9,8 +9,14 @@ Template.publisherTodoItem.helpers({
     },
     isPullrequest: function() {
         return this.status == 'pullrequest';
+    },
+    original: function() {
+        return Todos.findOne({_id : this.todoId});
     }
 });
+
+
+
 
 Template.publisherTodoItem.events({
     'focus input[type=text]': function(event) {
@@ -56,5 +62,9 @@ Template.publisherTodoItem.events({
     'click .unpublish': function(e) {
         e.preventDefault();
         Todos.update(this._id, {$set: {status: 'draft'}});
+    },
+    'click .show': function(e) {
+        e.preventDefault();
+        $('.ui.modal.compare').modal('show');
     }
 });

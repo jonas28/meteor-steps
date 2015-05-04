@@ -16,11 +16,46 @@
                     <a class="publish" href="#" title="Publish"><i class="unhide icon"></i></a>
                 {{/if}}
                 <a class="delete" href="#" title="Delete"><i class="trash icon"></i></a>
-                {{#if isPullrequest}}<div class="ui tiny label">Pull Request</div>{{/if}}
+                {{#if isPullrequest}}
+                    <div class="ui tiny label show">
+                        Pull Request
+                    </div>
+                    <div class="ui modal compare">
+                        <i class="close icon"></i>
+                        <div class="header">
+                            Pull Request
+                        </div>
+                        <div class="content">
+                            <div class="description">
+                                <div class="ui cards">
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="header">Original: {{original.title}}</div>
+                                            <div class="description">
+                                                {{original.comment}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="content">
+                                            <div class="header">Pullrequest: {{title}}</div>
+                                            <div class="description">
+                                                {{comment}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="ui button">Cancel</div>
+                            <div class="ui button">OK</div>
+                        </div>
+                    </div>
+                {{/if}}
             </div>
         </div>
     </div>
 </template>
-
 
 
