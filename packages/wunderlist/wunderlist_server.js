@@ -80,7 +80,7 @@ Meteor.startup(function () {
         postListServer: function (accessToken, listId) {
             var list = Lists.findOne({_id : listId});
             var listTitle = list.title;
-            console.log('listTitle: ' + listTitle)
+            // console.log('listTitle: ' + listTitle)
             var userAgent = "Meteor";
             if (Meteor.release)
                 userAgent += "/" + Meteor.release;
@@ -101,14 +101,6 @@ Meteor.startup(function () {
                 throw _.extend(new Error("Failed to post List to Wunderlist. " + err.message),
                     {result: err.result});
             }
-        },
-        postListTest: function (accessToken, listId, listTitle) {
-            // var list = Lists.findOne({_id : listId});
-            // var list = Lists.findOne(listId);
-
-            // return 'AccessToken: ' + accessToken + 'listId: ' + listId ;
-            return listId;
-
         },
         postTodos: function (accessToken, todoTitle, wunderlistId) {
             var userAgent = "Meteor";
@@ -155,7 +147,7 @@ Meteor.startup(function () {
                 throw _.extend(new Error("Failed to post Comment to Wunderlist. " + err.message),
                     {response: err.response});
             }
-        },
+        }
     });
 });
 
