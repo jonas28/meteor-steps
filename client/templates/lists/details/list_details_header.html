@@ -3,7 +3,7 @@
         <div class="section">
             <div class="container">
                 <h1 class="header center teal-text text-lighten-2">{{title}}</h1>
-                <p class="left-align light">{{description}}</p>
+                <h5 class="header col s12 light">{{teaser}}</h5>
                 <div class="row center">
                     <div class="ui floating dropdown button">
                         <div class="text">Export</div>
@@ -33,18 +33,17 @@
                         <div class="ui button">OK</div>
                     </div>
                 </div>
-                {{# if maintainer}}
-                    <a class="btn btn-default submit" href="{{pathFor 'listEdit'}}">Update</a>
-                    <a class="btn btn-default submit" href="{{pathFor 'todoSubmit'}}">Submit Todo</a>
-                {{/if}}
-                {{#if currentUser}}
-                    <a class="btn btn-default fork" href="#">Fork</a>
-                {{/if}}
-
+                <div class="row center">
+                    {{#if currentUser}}
+                        <a class="btn btn-default fork" href="#">Fork</a>
+                    {{/if}}
+                </div>
             </div>
         </div>
     </div>
 </template>
+
+
 
 
 

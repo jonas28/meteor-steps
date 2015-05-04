@@ -1,7 +1,9 @@
 <template name="appsList">
-    <div class="posts">
-        {{#each apps}}
-            {{> appItem}}
-        {{/each}}
+    <div class="applist">
+        <div class="ui eight column grid">
+            {{#each apps}}
+                {{> appItem}}
+            {{/each}}
+        </div>
     </div>
 </template>

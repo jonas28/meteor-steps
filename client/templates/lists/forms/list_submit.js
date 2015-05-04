@@ -4,6 +4,7 @@ Template.listSubmit.events({
 
         var list = {
             title: $(e.target).find('[name=title]').val(),
+            teaser: $(e.target).find('[name=teaser]').val(),
             description: $(e.target).find('[name=description]').val(),
             status: $(e.target).find('[name=status]').val()
         };

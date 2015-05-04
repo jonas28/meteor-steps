@@ -1,9 +1,10 @@
 Template.listEdit.helpers({
     status: function() {
-        var status = [
-            {name: "published"},
-            {name: "draft"}
-        ];
+            var status = [
+                {name: "draft"},
+                {name: "earlyaccess"},
+                {name: "published"}
+            ];
         return status;
         // TODO #46: Der aktuelle Status wird noch nicht als option value active genutzt.
     },
@@ -17,7 +18,6 @@ Template.listEdit.helpers({
 Template.listEdit.rendered = function () {
     this.$('.dropdown')
         .dropdown({
-            // you can use any ui transition
             transition: 'drop'
         })
     ;
@@ -31,6 +31,7 @@ Template.listEdit.events({
 
         var listProperties = {
             title: $(e.target).find('[name=title]').val(),
+            teaser: $(e.target).find('[name=teaser]').val(),
             description: $(e.target).find('[name=description]').val(),
             status: $(e.target).find('[name=status]').val()
         };

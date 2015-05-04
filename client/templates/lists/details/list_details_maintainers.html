@@ -1,23 +1,41 @@
 <template name="listDetailsMaintainers">
     {{> listDetailsHeader}}
-    <ul class="nav nav-pills">
-        <ul class="nav nav-tabs">
-            <li role="presentation"><a href="{{pathFor 'listPage'}}">Details</a></li>
-            <li role="presentation" class="active"><a href="{{pathFor 'listPage'}}/maintainers">Maintainers</a></li>
-            <li role="presentation"><a href="{{pathFor 'listPage'}}/contributors">Contributors</a></li>
-            <li role="presentation"><a href="{{pathFor 'listPage'}}/activities">Activities</a></li>
-            <li role="presentation"><a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a></li>
-            <li role="presentation"><a href="{{pathFor 'listPage'}}/forks">Forks</a></li>
-        </ul>
-    </ul>
+    <div class="container">
+        <div class="section">
+            <div class="ui secondary pointing menu">
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/">Details</a>
+                </a>
+                <a class="active item">
+                    <a href="{{pathFor 'listPage'}}/maintainers">Maintainers</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/contributors">Contributors</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/activities">Activities</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/forks">Forks</a>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="section">
             <div class="post">
-        <h3>Maintainers</h3>
-        {{# if maintainer}}
-            {{> addMaintainer}}
-        {{/if}}
-        {{#if maintainers}}
+                <div class="row center">
+                <h4>Maintainers</h4>
+                </div>
+                {{# if maintainer}}
+                    <div class="row center">
+                        {{> addMaintainer}}
+                    </div>
+                {{/if}}
+                {{#if maintainers}}
                 <table>
                     <thead>
                     <tr><th>Maintainer</th><th>Shares</th></tr>

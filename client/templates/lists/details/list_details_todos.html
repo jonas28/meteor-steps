@@ -1,13 +1,12 @@
 <template name="listDetailsTodos">
-    <h3>Todos</h3>
     <div class="ui cards">
-                    {{#each todos}}
-                        {{> todoItem}}
-                    {{else}}
-                    <p class="list-group-item">
-                        There are no todos in this list.
-                    </p>
-                    {{/each}}
+        {{#each todos}}
+            {{> todoItem}}
+        {{else}}
+        <div class="row center">
+        <p>There are no todos in this list.</p>
+        </div>
+        {{/each}}
     </div>
 </template>
 

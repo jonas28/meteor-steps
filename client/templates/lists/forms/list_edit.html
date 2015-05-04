@@ -9,6 +9,12 @@
                     </div>
                 </div>
                 <div class="row">
+                    <label class="control-label" for="teaser">teaser</label>
+                    <div class="controls">
+                        <input name="teaser" id="teaser" type="text" value="{{teaser}}" placeholder="teaser" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
                     <label class="control-label" for="description">Description</label>
                     <div class="controls">
                         <input name="description" id="description" type="text" value="{{description}}" placeholder="Description" class="form-control"/>
@@ -26,9 +32,9 @@
                         <div class="default text">Status</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
-                            <div class="item" data-value="draft">draft</div>
-                            <div class="item" data-value="earlyaccess">early access</div>
-                            <div class="item" data-value="published">published</div>
+                            {{#each status}}
+                                    <div class="item" data-value="{{name}}">{{name}}</div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
