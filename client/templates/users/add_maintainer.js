@@ -12,17 +12,15 @@ Template.addMaintainer.rendered = function () {
             transition: 'drop'
         })
     ;
-    Meteor.typeahead.inject();
 };
 
-Template.listDetailsMaintainers.events({
+Template.addMaintainer.events({
     'click .item': function(e) {
         e.preventDefault();
-        // var currentListId = this._id;
         var currentListId = Template.parentData(1)._id;
+        alert(currentListId);
         var selectedUserId = $(e.currentTarget).data('value');
         var newmaintainer = Users.findOne({_id : selectedUserId});
-
         var listProperties = {
             userId: selectedUserId,
             userName: newmaintainer.username
