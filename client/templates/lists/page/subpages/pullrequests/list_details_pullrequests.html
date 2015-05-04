@@ -1,0 +1,44 @@
+<template name="listDetailsPullrequests">
+    {{> listDetailsHeader}}
+    <div class="container">
+        <div class="section">
+            <div class="ui secondary pointing menu">
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/">Details</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/maintainers">Maintainers</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/contributors">Contributors</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/activities">Activities</a>
+                </a>
+                <a class="active item">
+                    <a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/forks">Forks</a>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="post">
+                <h3>Pull Requests</h3>
+                <p>
+                    Pull requests help you collaborate on code with other people. As pull requests are created, they'll appear here in a list. To get started, you should create a pull request.
+                </p>
+                <div class="list-group">
+                    {{#each pullrequests}}
+                        {{> pullrequestItem}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+

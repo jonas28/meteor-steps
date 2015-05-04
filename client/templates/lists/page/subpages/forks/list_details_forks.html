@@ -1,0 +1,48 @@
+<template name="listDetailsForks">
+    {{> listDetailsHeader}}
+    <div class="container">
+        <div class="section">
+            <div class="ui secondary pointing menu">
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/">Details</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/maintainers">Maintainers</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/contributors">Contributors</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/activities">Activities</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a>
+                </a>
+                <a class="active item">
+                    <a href="{{pathFor 'listPage'}}/forks">Forks</a>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="post">
+                <h3>Forks</h3>
+                <p>A fork happens when user take a copy of a list and start independent development on it, creating a distinct and separate list. </p>
+                {{#if forks}}
+                    <div class="list-group">
+                        {{#each forks}}
+                            {{> listItemForks}}
+                        {{else}}
+                            <p class="list-group-item">
+                                There are no Forks from this list.
+                            </p>
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+
+

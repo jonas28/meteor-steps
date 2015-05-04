@@ -62,7 +62,7 @@ $.api = $.fn.api = function(parameters) {
           ? $(settings.stateContext)
           : $module,
 
-        // request details
+        // request subpages
         ajaxSettings,
         requestSettings,
         url,

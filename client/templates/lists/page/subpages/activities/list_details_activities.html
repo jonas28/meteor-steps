@@ -1,0 +1,41 @@
+<template name="listDetailsActivities">
+    {{> listDetailsHeader}}
+    <div class="container">
+        <div class="section">
+            <div class="ui secondary pointing menu">
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/">Details</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/maintainers">Maintainers</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/contributors">Contributors</a>
+                </a>
+                <a class="active item">
+                    <a href="{{pathFor 'listPage'}}/activities">Activities</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/pullrequests">Pull Requests</a>
+                </a>
+                <a class="item">
+                    <a href="{{pathFor 'listPage'}}/forks">Forks</a>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="post">
+                <h3>Activities</h3>
+                {{#each activities}}
+                    <div class="list-group">
+                    {{> activityItem}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
+
+
