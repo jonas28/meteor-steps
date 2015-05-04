@@ -9,6 +9,7 @@ Template.publisherListPage.helpers({
 });
 
 Template.publisherListPage.rendered = function() {
+    // TODO: since change to semantic UI cards it´s not possible to drag and drop the todos anymore.
     this.$('#items').sortable({
         stop: function(e, ui) {
             // get the dragged html element and the one before

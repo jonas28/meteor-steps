@@ -58,6 +58,7 @@ Template.publisherTodoItem.events({
     'click .publish': function(e) {
         e.preventDefault();
         Todos.update(this._id, {$set: {status: 'published'}});
+        // TODO #59: check if the todo has a comment, when not disable publish button.
     },
     'click .unpublish': function(e) {
         e.preventDefault();
