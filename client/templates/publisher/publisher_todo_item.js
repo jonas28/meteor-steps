@@ -6,6 +6,9 @@ Template.publisherTodoItem.helpers({
     },
     isPublished: function() {
         return this.status == 'published';
+    },
+    isPullrequest: function() {
+        return this.status == 'pullrequest';
     }
 });
 
