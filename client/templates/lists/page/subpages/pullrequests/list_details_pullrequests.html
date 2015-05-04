@@ -27,11 +27,15 @@
     <div class="container">
         <div class="section">
             <div class="post">
-                <h3>Pull Requests</h3>
-                <p>
-                    Pull requests help you collaborate on code with other people. As pull requests are created, they'll appear here in a list. To get started, you should create a pull request.
-                </p>
-                <div class="list-group">
+                <div class="row center">
+                    <h4>Pull Requests</h4>
+                </div>
+                <div class="row center">
+                    <p>
+                        Pull requests help you collaborate on code with other people. As pull requests are created, they'll appear here in a list. To get started, you should create a pull request.
+                    </p>
+                </div>
+                <div class="ui cards">
                     {{#each pullrequests}}
                         {{> pullrequestItem}}
                     {{/each}}
