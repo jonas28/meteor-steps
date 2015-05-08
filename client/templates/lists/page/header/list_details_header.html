@@ -14,6 +14,7 @@
                             {{/each}}
                         </div>
                     </div>
+                    {{> progressBar current= total="100" completeClass="green"}}
                 </div>
                 <div class="ui modal">
                     <i class="close icon"></i>
@@ -26,12 +27,11 @@
                         </div>
                         <div class="description">
                             <div class="row center">
-                                Exportiert: {{counter}}
+                                <p>Exportiert: {{counter}}</p>
+                                <p>Prozent: {{calcu}}%</p>
                             </div>
                             <div class="row center">
-                                <div class="ui teal progress" id="export">
-                                    <div class="bar"></div>
-                                </div>
+
                             </div>
 
                             The Wunderlist API uses OAuth2 to allow external applications to request authorization to a user’s Wunderlist account without directly handling their password.

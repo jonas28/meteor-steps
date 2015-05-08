@@ -10,6 +10,11 @@ Template.listDetailsHeader.helpers({
         // console.log('counter helper is running');
         return Session.get('exportedTodosCount');
         // return Template.instance().exportedTodosCount.get()
+    },
+    calcu: function () {
+        this.calcu = new ReactiveVar();
+        this.calcu.set((Session.get('exportedTodosCount') / Session.get('originalTodosCount'))*100);
+        return Template.instance().calcu.get();
     }
 });
 
@@ -26,7 +31,9 @@ Template.listDetailsHeader.events({
 
 
 Template.listDetailsHeader.created = function () {
-    // this.exportedTodosCount = new ReactiveVar();
+    // this.calcu = new ReactiveVar();
+    // this.calcu.set((Session.get('exportedTodosCount') / Session.get('originalTodosCount'))*100);
+    // this.percent = new ReactiveVar();
     // this.exportedTodosCount.set(50);
     // this.exportedTodosCount.set(50);
     // TODO: set exportedTodosCount from wunderlist_client.js
@@ -44,7 +51,8 @@ Template.listDetailsHeader.rendered = function () {
         }
     });
     this.$('#export').progress({
-        percent: (Session.get('exportedTodosCount') / Session.get('originalTodosCount'))*100
-        // TODO: percent should be reactiv to move the progress bar.
+        percent: Template.instance().calcu.get()
+        // percent: (Session.get('exportedTodosCount') / Session.get('originalTodosCount'))*100
+        // TODO: percent should be reactive to move the progress bar.
     });
 };
