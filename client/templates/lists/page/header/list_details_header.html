@@ -10,17 +10,9 @@
                         <i class="dropdown icon"></i>
                         <div class="menu">
                             {{#each apps}}
-                                {{> appExportbuttonItem}}
+                                <div data-value="{{title}}" class="item"><a href="#" class="exportTo{{title}}">{{title}}</a></div>
                             {{/each}}
                         </div>
-                    </div>
-                </div>
-                <div class="row center">
-                    Countdown: {{counter}}
-                </div>
-                <div class="row center">
-                    <div class="ui teal progress" id="export">
-                        <div class="bar"></div>
                     </div>
                 </div>
                 <div class="ui modal">
@@ -33,6 +25,15 @@
                             BILD
                         </div>
                         <div class="description">
+                            <div class="row center">
+                                Exportiert: {{counter}}
+                            </div>
+                            <div class="row center">
+                                <div class="ui teal progress" id="export">
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+
                             The Wunderlist API uses OAuth2 to allow external applications to request authorization to a user’s Wunderlist account without directly handling their password.
                         </div>
                     </div>

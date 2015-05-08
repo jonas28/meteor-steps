@@ -56,6 +56,7 @@ Wunderlist.postList = function(listId, listTitle) {
         });
         var originalTodos = Todos.find({listId : listId, status : 'published'}, {sort: {rank: 1}});
         originalTodosCount = Todos.find({listId : listId, status : 'published'}).count();
+        Session.set("originalTodosCount", originalTodosCount);
         // console.log('originalTodosCount: ' + originalTodosCount);
         exportedTodosCount = 0;
         originalTodos.forEach(function (todo) {
@@ -74,7 +75,8 @@ Wunderlist.postList = function(listId, listTitle) {
                     var commentId = feeback.id;
                     if (commentId)
                         exportedTodosCount = exportedTodosCount + 1;
-
+                        Session.set("exportedTodosCount", exportedTodosCount);
+                        console.log((Session.get('exportedTodosCount') / Session.get('originalTodosCount'))*100);
                     if (originalTodosCount == exportedTodosCount) {
                         return throwError('Export Done!');
                     }
@@ -83,10 +85,3 @@ Wunderlist.postList = function(listId, listTitle) {
         });
     });
 };
-
-Wunderlist.getCount = function () {
-    var Counter = 23;
-    //return Session.get('count');
-    return Counter;
-};
-
