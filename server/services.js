@@ -19,6 +19,17 @@ ServiceConfiguration.configurations.upsert(
 );
 
 ServiceConfiguration.configurations.upsert(
+    { service: "fitbit" },
+    {
+        $set: {
+            consumerKey: Meteor.settings.public.fitbit.consumer_key,
+            secret: Meteor.settings.public.fitbit.consumer_secret,
+            redirectUrl: Meteor.settings.public.fitbit.redirect_url
+        }
+    }
+);
+
+ServiceConfiguration.configurations.upsert(
     { service: "wunderlist" },
     {
         $set: {
@@ -29,6 +40,17 @@ ServiceConfiguration.configurations.upsert(
     }
 );
 
+
+ServiceConfiguration.configurations.upsert(
+    { service: "trello" },
+    {
+        $set: {
+            clientKey: Meteor.settings.public.trello.client_key,
+            secret: Meteor.settings.public.trello.client_secret,
+            redirectUrl: Meteor.settings.public.trello.redirect_url
+        }
+    }
+);
 
 
 

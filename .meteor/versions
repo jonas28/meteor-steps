@@ -1,8 +1,10 @@
 accounts-base@1.2.0
 accounts-facebook@1.0.4
+accounts-fitbit@0.0.0
 accounts-github@1.0.4
 accounts-oauth@1.1.5
 accounts-password@1.1.1
+accounts-trello@1.0.0
 accounts-ui@1.1.5
 accounts-ui-unstyled@1.1.7
 accounts-wunderlist@1.0.4
@@ -24,6 +26,7 @@ email@1.0.6
 fabienb4:semantic-ui-components@0.2.4
 facebook@1.2.0
 fastclick@1.0.3
+fitbit@0.0.0
 flemay:less-autoprefixer@1.0.1
 geojson-utils@1.0.3
 github@1.1.3
@@ -57,6 +60,7 @@ momentjs:moment@2.8.4
 mongo@1.1.0
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
+oauth1@1.1.4
 oauth2@1.1.3
 observe-sequence@1.0.6
 ordered-dict@1.0.3
@@ -79,6 +83,7 @@ spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
 tracker@1.0.7
+trello@0.0.1
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4
